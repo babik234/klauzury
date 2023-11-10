@@ -1,6 +1,9 @@
 let obj = document.getElementById("obj")
 let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
+let x_pos, y_pos, x_posB, y_posB, speedX, speedY
+
+
 
 function responsibility(){
     gameVH = window.innerHeight/100 * 87
@@ -10,6 +13,9 @@ function responsibility(){
     obj.style.display = "block"
   }
   setInterval(responsibility,0)
+
+
+  initializeGame()
 
 
   function samR() {
