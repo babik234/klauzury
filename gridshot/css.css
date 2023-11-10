@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    cursor: crosshair;
+}
+.screen{
+    position: absolute;
+    width: 100%;
+    height: 87vh;
+    background-color: rgb(129, 87, 87);
+    border-top: solid black 5px;
+    border-bottom: solid black 5px;
+}
+.circle{
+    width: 75px;
+    height: 75px;
+    background-color: black;
+    border-radius: 100px;
+    display: none;
+    position: absolute;
+}
+.p{
+    position: absolute;
+    top: 90vh;
+    left: 48%;
+}
+.back{
+    position: absolute;
+    top: 90vh;
+    left: 1%;
+}

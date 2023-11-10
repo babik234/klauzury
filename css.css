@@ -1,0 +1,16 @@
+.buttons{
+display: flex;
+}
+.buttons a{
+    text-decoration: none;
+}
+.wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.img{
+    height: 200px;
+    width: 150px;
+    display: flex;
+}

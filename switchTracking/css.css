@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    cursor: crosshair;
+}
+.game{
+    height: 87vh;
+    background-color: rgb(146, 95, 95);
+    width: 100%;
+    border: black 2px solid;
+}
+.obj{
+    background-color: black;
+    border-radius: 35px;
+    display: inline-block;
+}
