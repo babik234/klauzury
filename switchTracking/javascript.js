@@ -10,8 +10,8 @@ let Minus = 0
 function responsibility(){
     gameVH = window.innerHeight/100 * 87
     vh = window.innerHeight
-    obj.style.height = vh/5 + "px"
-    obj.style.width = vh/15 + "px"
+    obj.style.height = vh/7 + "px"
+    obj.style.width = vh/21 + "px"
     obj.style.display = "block"
   }
   setInterval(responsibility,0)
@@ -45,14 +45,14 @@ function responsibility(){
   // změny speedu
   
   function samuelX() {
-    speedX = random(3, 5) * random(-3, 3);
+    speedX = random(3, 5) * random(-1, 1);
   }
 
   function initializeGame() {
     hitPoints = 100
     x_pos = random(10, window.innerWidth - 80);
     y_pos = random(10, window.innerHeight - (window.innerHeight / 3));
-    speedX = random(5, 10);
+    speedX = random(2, 5);
     points = 0;
     intervalSa = setInterval(samuelX, 1000);
     intervalR = setInterval(samR, 20);
@@ -78,24 +78,5 @@ function damageMinus(){
   hitPoints--
 }
 function notDamage(){
-  clearInterval(minus)
+  clearInterval(Minus)
 }
-
-
-  function hp(){
-    if(hitPoints >= 10){
-      spawn()
-    }
-  }
-
-  function spawn(){
-    x_pos = random(10, window.innerWidth - 80);
-    y_pos = random(10, window.innerHeight - (window.innerHeight / 3));
-    speedX = random(5, 10);
-
-    obj.style.position = "absolute";
-    obj.style.left = x_pos + "px";
-    obj.style.top = y_pos + "px";
-
-    obj.style.display = "block"
-  }
