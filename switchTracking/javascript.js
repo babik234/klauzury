@@ -15,7 +15,7 @@ function responsibility(){
     obj.style.height = vh/7 + "px"
     obj.style.width = vh/21 + "px"
     obj.style.display = "block"
-
+/*
     obj2.style.height = vh/7 + "px"
     obj2.style.width = vh/21 + "px"
     obj2.style.display = "block"
@@ -23,6 +23,7 @@ function responsibility(){
     obj3.style.height = vh/7 + "px"
     obj3.style.width = vh/21 + "px"
     obj3.style.display = "block"
+*/
   }
   setInterval(responsibility,0)
 
