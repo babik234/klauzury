@@ -3,9 +3,9 @@ let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
 let x_pos, y_pos, x_posB, y_posB, speedX, speedY
 let points = 0
-let hitPoints = 0
+let hitPoints = 100
 
-
+let Minus = 0
 
 function responsibility(){
     gameVH = window.innerHeight/100 * 87
@@ -49,6 +49,7 @@ function responsibility(){
   }
 
   function initializeGame() {
+    hitPoints = 100
     x_pos = random(10, window.innerWidth - 80);
     y_pos = random(10, window.innerHeight - (window.innerHeight / 3));
     speedX = random(5, 10);
@@ -66,8 +67,18 @@ function responsibility(){
   obj.addEventListener("mouseenter",damage)
   obj.addEventListener("mouseleave",notDamage)
 
-damage(){
+function damage(){
+Minus = setInterval(damageMinus,10)
+  if(hitPoints <= 0){
 
+    initializeGame()
+  }
+}
+function damageMinus(){
+  hitPoints--
+}
+function notDamage(){
+  clearInterval(minus)
 }
 
 
