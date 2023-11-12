@@ -1,4 +1,6 @@
 let obj = document.getElementById("obj")
+//let obj2= document.getElementById("obj2")
+//let obj3 = document.getElementById("obj3")
 let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
 let x_pos, y_pos, x_posB, y_posB, speedX, speedY
@@ -13,6 +15,14 @@ function responsibility(){
     obj.style.height = vh/7 + "px"
     obj.style.width = vh/21 + "px"
     obj.style.display = "block"
+
+    obj2.style.height = vh/7 + "px"
+    obj2.style.width = vh/21 + "px"
+    obj2.style.display = "block"
+
+    obj3.style.height = vh/7 + "px"
+    obj3.style.width = vh/21 + "px"
+    obj3.style.display = "block"
   }
   setInterval(responsibility,0)
 
@@ -45,7 +55,7 @@ function responsibility(){
   // změny speedu
   
   function samuelX() {
-    speedX = random(3, 5) * random(-1, 1);
+    speedX = random(3, 3) * random(-1, 1);
   }
 
   function initializeGame() {
