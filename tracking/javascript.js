@@ -95,7 +95,6 @@ function restart(){
 function hideButton(){
   document.getElementById("p").style.display = "none";
   document.getElementById("pp").style.display = "none";
-  objB.style.display = "none";
 }
 
 // zapnuti stránky
@@ -221,28 +220,14 @@ function vyhra(){
 pointsKonec = points
 accKonec = acc
 
-
-pocetHer = localStorage.getItem("pocetHer")
-
-pocetHer++
-
-pocetHer = localStorage.setItem("pocetHer")
-
   document.getElementById("restart").style.display = "block"
+  
   
   trackingLastScore = pointsKonec
   localStorage.setItem("trackingLastScore", trackingLastScore)
 
-  if(trackingBestScore > trackingLastScore){
-    trackingBestScore = trackingLastScore
 
-    localStorage.setItem(trackingBestScore)
-  }
-  localStorage.setItem(lastScore)
-  vsechnyScore += localStorage.getItem(pointsKonec)
 
-  localStorage.getItem(pocetHer)
-  trackingAverageScore = vsechnyScore / pocetHer
 }
 
 // points
