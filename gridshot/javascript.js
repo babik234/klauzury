@@ -3,6 +3,12 @@ let circle2 = document.getElementById("2")
 let circle3 = document.getElementById("3")
 let screen = document.getElementById("screen")
 
+let gridshotLastScore = localStorage.getItem("gridshotLastScore")
+let gridshotBestScore = localStorage.getItem("gridshotBestScore")
+
+let timeLeft = 30;
+let timerId = 0;
+
 let points = 0
 
 console.log(screen.getBoundingClientRect())
@@ -111,4 +117,28 @@ function click3(){
         points++
         document.getElementById("p").innerHTML = points
     console.log(x_pos3)
+}
+
+
+
+timerId =  setInterval(countdown, 1000)
+ 
+function vyhra(){
+    gridshotLastScore = points
+    localStorage.setItem("gridshotLastScore", gridshotLastScore)
+   
+    if(gridshotLastScore >= gridshotBestScore){
+        gridshotBestScore = gridshotLastScore
+        localStorage.setItem("gridshotBestScore", gridshotBestScore )
+    }
+    }
+
+
+function countdown() {
+    if (timeLeft == -1) {
+    clearInterval(timerId)
+    vyhra()
+    } else {
+    timeLeft--;
+    }
 }

@@ -5,9 +5,14 @@ let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
 let x_pos, y_pos, x_posB, y_posB, speedX, speedY
 let points = 0
+let switchtrackLastScore = localStorage.getItem("switchtrackLastScore")
 let hitPoints = 100
 
 let Minus = 0
+
+let timeLeft = 30;
+let timerId = 0;
+
 
 function responsibility(){
     gameVH = window.innerHeight/100 * 87
@@ -30,6 +35,7 @@ function responsibility(){
 
   initializeGame()
 
+  timerId =  setInterval(countdown, 1000)
 
   function samR() {
     if (x_pos >= window.innerWidth - 80) {
@@ -64,7 +70,6 @@ function responsibility(){
     x_pos = random(10, window.innerWidth - 80);
     y_pos = random(10, window.innerHeight - (window.innerHeight / 3));
     speedX = random(2, 5);
-    points = 0;
     intervalSa = setInterval(samuelX, 1000);
     intervalR = setInterval(samR, 20);
   
@@ -81,7 +86,7 @@ function responsibility(){
 function damage(){
 Minus = setInterval(damageMinus,10)
   if(hitPoints <= 0){
-
+    points++
     initializeGame()
   }
 }
@@ -90,4 +95,21 @@ function damageMinus(){
 }
 function notDamage(){
   clearInterval(Minus)
+}
+
+
+function vyhra(){
+switchtrackLastScore = points
+localStorage.setItem("switchtrackLastScore", switchtrackLastScore)
+console.log("JUASDGFA")
+}
+
+
+function countdown() {
+  if (timeLeft == -1) {
+    clearInterval(timerId)
+    vyhra()
+  } else {
+    timeLeft--;
+  }
 }

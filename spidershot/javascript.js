@@ -13,6 +13,8 @@ let y_pos1 = random(5,((gameVH - vh/5)-5))
 let timeLeft = 30;
 let timerId = 0;
 
+let spidershotLastScore = localStorage.getItem("spidershotLastScore")
+
 score = 0
 timer = 0
 timerId = 0
@@ -130,5 +132,7 @@ function outFunction(){
   }
 
   function vyhra(){
-    document.write("KONEC")
+   spidershotLastScore = score
+   localStorage.setItem("spidershotLastScore",spidershotLastScore)
+   console.log("JKHDSF")
   }
