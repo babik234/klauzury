@@ -23,9 +23,9 @@ let timeLeft = 30;
 let timerId = 0;
 
 
-const trackingLastScore = 0
-const trackingBestScore = 0
-const trackingAverageScore = 0
+let trackingLastScore = localStorage.getItem("trackingLastScore")
+let trackingBestScore = 0
+let trackingAverageScore = 0
 
 console.log(gameVH)
 console.log(vh)
