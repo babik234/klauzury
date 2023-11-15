@@ -6,6 +6,7 @@ let vh = window.innerHeight
 let x_pos, y_pos, x_posB, y_posB, speedX, speedY
 let points = 0
 let switchtrackLastScore = localStorage.getItem("switchtrackLastScore")
+let switchtrackBestScore = localStorage.getItem("switchtrackBestScore")
 let hitPoints = 100
 
 let Minus = 0
@@ -101,6 +102,10 @@ function notDamage(){
 function vyhra(){
 switchtrackLastScore = points
 localStorage.setItem("switchtrackLastScore", switchtrackLastScore)
+if(switchtrackLastScore >= switchtrackBestScore){
+switchtrackBestScore = switchtrackLastScore
+localStorage.setItem("switchtrackBestScore", switchtrackBestScore)
+}
 console.log("JUASDGFA")
 }
 
