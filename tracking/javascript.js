@@ -16,8 +16,8 @@ let accAll = 0
 let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
 
-let vsechnyScore = 0
-let pocetHer = 0
+let vsechnyScore = localStorage.getItem("vsechnyScore")
+let pocetHer = localStorage.getItem("pocetHer")
 
 let timeLeft = 3;
 let timerId = 0;
@@ -25,7 +25,7 @@ let timerId = 0;
 
 let trackingLastScore = localStorage.getItem("trackingLastScore")
 let trackingBestScore = localStorage.getItem("trackingBestScore")
-let trackingAverageScore = 0
+let trackingAverageScore = localStorage.getItem("trackingAverageScore")
 
 console.log(gameVH)
 console.log(vh)
@@ -229,6 +229,17 @@ document.getElementById("score").innerHTML = "BEST: " + pointsKonec
     trackingBestScore = trackingLastScore
     localStorage.setItem("trackingBestScore", trackingBestScore)
   }
+
+ pocetHer++
+ localStorage.setItem("pocetHer",pocetHer)
+ 
+ vsechnyScore += trackingLastScore
+ 
+ console.log(vsechnyScore)
+ localStorage.setItem("vsechnyScore",vsechnyScore)
+
+ trackingAverageScore = vsechnyScore/pocetHer
+localStorage.setItem("trackingAverageScore",trackingAverageScore)
 
 
 }
