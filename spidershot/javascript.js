@@ -13,6 +13,7 @@ let y_pos1 = random(5,((gameVH - vh/5)-5))
 let timeLeft = 30;
 let timerId = 0;
 
+let spidershotBestScore = localStorage.getItem("spidershotBestScore")
 let spidershotLastScore = localStorage.getItem("spidershotLastScore")
 
 score = 0
@@ -134,5 +135,9 @@ function outFunction(){
   function vyhra(){
    spidershotLastScore = score
    localStorage.setItem("spidershotLastScore",spidershotLastScore)
-   console.log("JKHDSF")
+
+   if(spidershotLastScore >= spidershotBestScore){
+    spidershotBestScore = spidershotLastScore
+    localStorage.setItem("spidershotBestScore",spidershotBestScore)
+   }
   }

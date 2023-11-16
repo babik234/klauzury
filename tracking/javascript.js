@@ -24,7 +24,7 @@ let timerId = 0;
 
 
 let trackingLastScore = localStorage.getItem("trackingLastScore")
-let trackingBestScore = 0
+let trackingBestScore = localStorage.getItem("trackingBestScore")
 let trackingAverageScore = 0
 
 console.log(gameVH)
@@ -225,6 +225,10 @@ accKonec = acc
   
   trackingLastScore = pointsKonec
   localStorage.setItem("trackingLastScore", trackingLastScore)
+  if(trackingLastScore >= trackingBestScore){
+    trackingBestScore = trackingLastScore
+    localStorage.setItem("trackingBestScore", trackingBestScore)
+  }
 
 
 
