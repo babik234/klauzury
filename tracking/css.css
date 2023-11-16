@@ -23,7 +23,7 @@ body{
 }
 .vyhra{
     text-align: center;
-    padding-top: 450px;
+    padding-top: 50px;
     color: white;
     font-size: 200px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -93,13 +93,9 @@ body{
     display: none;
     text-align: center;
 }
-.restart{
-    margin-top: 700px;
-    margin-left: 1000px;
-    font-size: 50px;
-    padding: 10px;
-    border-radius: 10px;
-    position: absolute;
+.score{
+    font-size: 100px;
+    text-align: center;
 }
 
 .pointed{

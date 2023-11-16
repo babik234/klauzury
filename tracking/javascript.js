@@ -19,7 +19,7 @@ let vh = window.innerHeight
 let vsechnyScore = 0
 let pocetHer = 0
 
-let timeLeft = 30;
+let timeLeft = 3;
 let timerId = 0;
 
 
@@ -63,8 +63,6 @@ game.style.display = "block";
 // button event listener
 buttonPlay.addEventListener("click",initializeGame)
 buttonPlay.addEventListener("click",hideButton)
-buttonRestart.addEventListener("click",restart)
- 
 // start hry
 function initializeGame() {
   x_pos = random(10, window.innerWidth - 80);
@@ -209,19 +207,21 @@ setInterval(accuracy,10)
 
 // vyhra
 function vyhra(){
+
+  pointsKonec = points
+  accKonec = acc
+
   game.style.display = "block";
   document.getElementById("vyhra").style.display = "block"
-  document.getElementById("vyhra").innerHTML = "KONEC"
 
-  document.querySelectorAll('#acc, #accc, #acccc,#p,#pp,#back').forEach(item => {
+  document.querySelectorAll('#back,#acc, #accc, #acccc,#p,#pp').forEach(item => {
     item.style.display = 'none';
 })
+document.getElementById("best").innerHTML = "SCORE: " + Math.floor(accKonec)+ " %"
+document.getElementById("score").innerHTML = "BEST: " + pointsKonec
 
-pointsKonec = points
-accKonec = acc
 
-  document.getElementById("restart").style.display = "block"
-  
+
   
   trackingLastScore = pointsKonec
   localStorage.setItem("trackingLastScore", trackingLastScore)
@@ -229,7 +229,6 @@ accKonec = acc
     trackingBestScore = trackingLastScore
     localStorage.setItem("trackingBestScore", trackingBestScore)
   }
-
 
 
 }
