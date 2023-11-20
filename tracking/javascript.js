@@ -4,7 +4,6 @@ let points = 0
 let pointsKonec = 0
 let x_pos, y_pos, x_posB, y_posB, speedX, speedY;
 let obj = document.getElementById("obj");
-let objB = document.getElementById("objB");
 let button = document.getElementById("button");
 let game = document.getElementById("game");
 let buttonRestart = document.getElementById("restart")
