@@ -10,36 +10,32 @@ let vh = window.innerHeight
 let x_pos1 = random(5,window.innerWidth - 40)
 let y_pos1 = random(5,((gameVH - vh/5)-5))
 
-let timeLeft = 30;
+let timeLeft = 3;
 let timerId = 0;
+
+let pocetHer = localStorage.getItem("pocetHer")
+let vsechnyScore = localStorage.getItem("vsechnyScore")
 
 let spidershotBestScore = localStorage.getItem("spidershotBestScore")
 let spidershotLastScore = localStorage.getItem("spidershotLastScore")
+let spidershotAverageScore = localStorage.getItem("spidershotAverageScore")
 
-score = 0
-timer = 0
-timerId = 0
+points = 0
 
 
-function startTimer(){
-    timerId = setInterval(countdown, 1000)
-    timer++
+obj.addEventListener("click",ahoj)
 
-    if(timer === 1 ){
-        obj.removeEventListener("click",startTimer)
-    }
+function ahoj(){
+if(points == 1 ){
+  timerId = setInterval(countdown, 1000)
 }
-
-
-
-
-
+}
 
 document.getElementById("screen").style.width = (window.innerWidth - 80)
 document.getElementById("screen").style.height = (gameVH - vh/5)-5
 
 obj.addEventListener("click",middleFunction)
-obj.addEventListener("click",startTimer)
+
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -74,7 +70,7 @@ function random(min, max) {
   obj.addEventListener("click",outFunction)
   obj.removeEventListener("click", middleFunction)
   
-  score++
+  points++
 }
 
 function outFunction(){ 
@@ -94,7 +90,7 @@ function outFunction(){
     obj.addEventListener("click",middleFunction)
     obj.removeEventListener("click", outFunction)
 
-    score++
+    points++
  }
 
  function responsibility(){
@@ -133,11 +129,33 @@ function outFunction(){
   }
 
   function vyhra(){
-   spidershotLastScore = score
+   spidershotLastScore = points
    localStorage.setItem("spidershotLastScore",spidershotLastScore)
 
    if(spidershotLastScore >= spidershotBestScore){
     spidershotBestScore = spidershotLastScore
     localStorage.setItem("spidershotBestScore",spidershotBestScore)
    }
+
+   pocetHer++
+  localStorage.setItem("pocetHer",pocetHer)
+  
+  let VsechnyScore = parseInt(vsechnyScore)
+  
+  VsechnyScore += spidershotLastScore
+  
+  spidershotAverageScore = VsechnyScore/pocetHer
+  
+  if(isNaN(VsechnyScore) == true){
+      VsechnyScore = spidershotLastScore
+      localStorage.setItem("vsechnyScore",VsechnyScore)
+  }
+  if(isNaN(spidershotAverageScore) == true){
+    spidershotAverageScore = spidershotLastScore
+    localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
+  }
+  
+  localStorage.setItem("vsechnyScore",VsechnyScore)
+  localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
+
   }

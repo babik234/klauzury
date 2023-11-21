@@ -28,7 +28,7 @@ document.getElementById("SSLS").innerHTML = spidershotLastScore
 let spidershotBestScore = localStorage.getItem("spidershotBestScore")
 document.getElementById("SSBS").innerHTML = spidershotBestScore
 
-let spidershotAverageScore = localStorage.getItem("spidershotAveragreScore")
+let spidershotAverageScore = localStorage.getItem("spidershotAverageScore")
 document.getElementById("SSAS").innerHTML = spidershotAverageScore
 
 

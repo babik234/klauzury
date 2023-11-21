@@ -224,34 +224,32 @@ document.getElementById("score").innerHTML = "BEST: " + pointsKonec
   
   trackingLastScore = pointsKonec
   localStorage.setItem("trackingLastScore", trackingLastScore)
+
   if(trackingLastScore >= trackingBestScore){
     trackingBestScore = trackingLastScore
     localStorage.setItem("trackingBestScore", trackingBestScore)
   }
 
- pocetHer++
- localStorage.setItem("pocetHer",pocetHer)
-
-
-if(vsechnyScore == NaN || vsechnyScore == "NaN"){
-  vsechnyScore = 0
-  localStorage.setItem("vsechnyScore",vsechnyScore)
-}
-
-
-
-
- vsechnyScore = parseInt(vsechnyScore)
- 
- vsechnyScore += parseInt(pointsKonec)
-
-
-
-
-
- trackingAverageScore = vsechnyScore/pocetHer
-localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
- localStorage.setItem("vsechnyScore",vsechnyScore)
+  pocetHer++
+  localStorage.setItem("pocetHer",pocetHer)
+  
+  let VsechnyScore = parseInt(vsechnyScore)
+  
+  VsechnyScore += trackingLastScore
+  
+  trackingAverageScore = VsechnyScore/pocetHer
+  
+  if(isNaN(VsechnyScore) == true){
+      VsechnyScore = trackingLastScore
+      localStorage.setItem("vsechnyScore",VsechnyScore)
+  }
+  if(isNaN(trackingAverageScore) == true){
+    trackingAverageScore = trackingLastScore
+    localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
+  }
+  
+  localStorage.setItem("vsechnyScore",VsechnyScore)
+  localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
 
 
 }

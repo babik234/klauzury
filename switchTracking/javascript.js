@@ -118,18 +118,23 @@ localStorage.setItem("switchtrackBestScore", switchtrackBestScore)
 pocetHer++
 localStorage.setItem("pocetHer",pocetHer)
 
+let VsechnyScore = parseInt(vsechnyScore)
 
-parseInt(vsechnyScore) = parseInt(points)
+VsechnyScore += switchtrackLastScore
 
-switchtrackAverageScore = vsechnyScore/pocetHer
+switchtrackAverageScore = VsechnyScore/pocetHer
 
-if(vsechnyScore == NaN || vsechnyScore == "NaN"){
-    vsechnyScore = 0
-    localStorage.setItem("vsechnyScore",vsechnyScore)
+if(isNaN(VsechnyScore) == true){
+    VsechnyScore = switchtrackLastScore
+    localStorage.setItem("vsechnyScore",VsechnyScore)
+}
+if(isNaN(switchtrackAverageScore) == true){
+  switchtrackAverageScore = switchtrackLastScore
+  localStorage.setItem("switchTrackAverageScore",Math.floor(switchtrackAverageScore))
 }
 
-localStorage.setItem("vsechnyScore",vsechnyScore)
-localStorage.setItem("switchtrackAverageScore",switchtrackAverageScore)
+localStorage.setItem("vsechnyScore",VsechnyScore)
+localStorage.setItem("switchtrackAverageScore",Math.floor(switchtrackAverageScore))
 
 }
 
