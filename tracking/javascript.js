@@ -18,7 +18,7 @@ let vh = window.innerHeight
 let vsechnyScore = localStorage.getItem("vsechnyScore")
 let pocetHer = localStorage.getItem("pocetHer")
 
-let timeLeft = 30;
+let timeLeft = 3;
 let timerId = 0;
 
 
@@ -232,14 +232,26 @@ document.getElementById("score").innerHTML = "BEST: " + pointsKonec
  pocetHer++
  localStorage.setItem("pocetHer",pocetHer)
 
+
+if(vsechnyScore == NaN || vsechnyScore == "NaN"){
+  vsechnyScore = 0
+  localStorage.setItem("vsechnyScore",vsechnyScore)
+}
+
+
+
+
  vsechnyScore = parseInt(vsechnyScore)
  
  vsechnyScore += parseInt(pointsKonec)
 
- localStorage.setItem("vsechnyScore",vsechnyScore)
+
+
+
 
  trackingAverageScore = vsechnyScore/pocetHer
 localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
+ localStorage.setItem("vsechnyScore",vsechnyScore)
 
 
 }
