@@ -5,13 +5,19 @@ let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
 let x_pos, y_pos, x_posB, y_posB, speedX, speedY
 let points = 0
+
+let vsechnyScore = localStorage.getItem("vsechnyScore")
+let pocetHer = localStorage.getItem("pocetHer")
+
+let switchtrackAverageScore = localStorage.getItem("switchtrackAverageScore")
 let switchtrackLastScore = localStorage.getItem("switchtrackLastScore")
 let switchtrackBestScore = localStorage.getItem("switchtrackBestScore")
-let hitPoints = 100
 
+
+let hitPoints = 100
 let Minus = 0
 
-let timeLeft = 30;
+let timeLeft = 3;
 let timerId = 0;
 
 
@@ -87,7 +93,7 @@ function responsibility(){
 function damage(){
 Minus = setInterval(damageMinus,10)
   if(hitPoints <= 0){
-    points++
+    points += 10
     initializeGame()
   }
 }
@@ -102,11 +108,29 @@ function notDamage(){
 function vyhra(){
 switchtrackLastScore = points
 localStorage.setItem("switchtrackLastScore", switchtrackLastScore)
+
+
 if(switchtrackLastScore >= switchtrackBestScore){
 switchtrackBestScore = switchtrackLastScore
 localStorage.setItem("switchtrackBestScore", switchtrackBestScore)
 }
-console.log("JUASDGFA")
+
+pocetHer++
+localStorage.setItem("pocetHer",pocetHer)
+
+
+parseInt(vsechnyScore) = parseInt(points)
+
+switchtrackAverageScore = vsechnyScore/pocetHer
+
+if(vsechnyScore == NaN || vsechnyScore == "NaN"){
+    vsechnyScore = 0
+    localStorage.setItem("vsechnyScore",vsechnyScore)
+}
+
+localStorage.setItem("vsechnyScore",vsechnyScore)
+localStorage.setItem("switchtrackAverageScore",switchtrackAverageScore)
+
 }
 
 

@@ -40,5 +40,5 @@ document.getElementById("STLS").innerHTML = switchtrackLastScore
 let switchtrackBestScore = localStorage.getItem("switchtrackBestScore")
 document.getElementById("STBS").innerHTML = switchtrackBestScore
 
-let switchtrackAverageScore = localStorage("switchtrackAverageScore")
+let switchtrackAverageScore = localStorage.getItem("switchtrackAverageScore")
 document.getElementById("STAS").innerHTML = switchtrackAverageScore 
