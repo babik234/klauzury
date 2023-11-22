@@ -101,6 +101,11 @@ body{
 .pointed{
 cursor: crosshair;
 }
+.end{
+    position: absolute;
+    margin-top: 85vh;
+    display: none;
+}
 
 /*
 BUTTON :

@@ -105,6 +105,10 @@ document.getElementById("acc").style.marginLeft = (window.innerWidth/2) + 62 +"p
 document.getElementById("accc").style.marginLeft = (window.innerWidth/2) +0+"px"
 document.getElementById("screen").style.width = (window.innerWidth - 80)
 document.getElementById("screen").style.height = (gameVH - vh/5)-5
+
+document.getElementById("endB").style.marginLeft = (window.innerWidth/2-100) +0+"px"
+document.getElementById("endR").style.marginLeft = (window.innerWidth/2-100) +100+"px"
+
 if(acc < 100 ){
   document.getElementById("acccc").style.marginLeft = (window.innerWidth/2) + 80 +"px"
 }else if(acc == 100){
@@ -207,12 +211,15 @@ setInterval(accuracy,10)
 // vyhra
 function vyhra(){
 
+
+
   pointsKonec = points
   accKonec = acc
 
   game.style.display = "block";
   document.getElementById("vyhra").style.display = "block"
-
+  endB.style.display = "block"
+  endR.style.display = "block"
   document.querySelectorAll('#back,#acc, #accc, #acccc,#p,#pp').forEach(item => {
     item.style.display = 'none';
 })
@@ -304,4 +311,7 @@ setInterval(setButtonPosition,0)
       } else {
         timeLeft--;
       }
+    }
+    function reload(){
+      location.reload();
     }
