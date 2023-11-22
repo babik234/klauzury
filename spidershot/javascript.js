@@ -33,6 +33,7 @@ if(points == 1 ){
 
 document.getElementById("screen").style.width = (window.innerWidth - 80)
 document.getElementById("screen").style.height = (gameVH - vh/5)-5
+document.getElementById("pp").style.marginLeft = 75 + "px"
 
 obj.addEventListener("click",middleFunction)
 
@@ -69,7 +70,7 @@ function random(min, max) {
 
   obj.addEventListener("click",outFunction)
   obj.removeEventListener("click", middleFunction)
-  
+  document.getElementById("pp").innerHTML = points
   points++
 }
 
@@ -91,6 +92,7 @@ function outFunction(){
     obj.removeEventListener("click", outFunction)
 
     points++
+    document.getElementById("pp").innerHTML = points
  }
 
  function responsibility(){

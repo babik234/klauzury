@@ -71,9 +71,8 @@ body{
     text-align: center;
 }
 #accc{
+    margin-top: 90vh;
     position: absolute;
-    display:none ;
-;
     text-align: center;
 }
 #acccc{
@@ -89,10 +88,16 @@ body{
     text-align: center;
 }
 #back{
-    margin-top: 95vh;
+    margin-top: 92vh;
     position: absolute;
-
-    text-align: center;
+    left: 50px;
+    color: white;
+    font-size: 25px;
+    border: black 2px solid;
+    border-radius: 5px;
+    background-color: black;
+    padding: 5px;
+    text-decoration: none;
 }
 .score{
     font-size: 100px;
@@ -104,8 +109,15 @@ cursor: crosshair;
 }
 .end{
     position: absolute;
-    margin-top: 85vh;
+    margin-top: 75vh;
     display: none;
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    border: black 2px solid;
+    border-radius: 5px;
+    background-color: black;
+    padding: 5px;
 }
 
 /*

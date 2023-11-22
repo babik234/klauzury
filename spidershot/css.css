@@ -10,6 +10,7 @@ body{
     background-color: rgb(128, 92, 92);
     height: 87vh;
     border: 2px black solid;
+    position: absolute
 
 }
 .obj{
@@ -18,4 +19,22 @@ body{
     width: 100px;
     border-radius: 100px;
 
+}
+.back{
+    margin-top: 92vh;
+    position: absolute;
+    left: 50px;
+    color: white;
+    font-size: 25px;
+    border: black 2px solid;
+    border-radius: 5px;
+    background-color: black;
+    padding: 5px;
+    text-decoration: none;
+}
+.p{
+    position: absolute;
+    margin-top: 91vh;
+    left: 45%;
+    font-size: 25px;
 }

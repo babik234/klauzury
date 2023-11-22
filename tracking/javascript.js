@@ -16,7 +16,7 @@ let vh = window.innerHeight
 let vsechnyScore = localStorage.getItem("vsechnyScore")
 let pocetHer = localStorage.getItem("pocetHer")
 
-let timeLeft = 3;
+let timeLeft = 30;
 let timerId = 0;
 
 
@@ -91,8 +91,8 @@ document.getElementById("accc").style.marginLeft = (window.innerWidth/2) +0+"px"
 document.getElementById("screen").style.width = (window.innerWidth - 80)
 document.getElementById("screen").style.height = (gameVH - vh/5)-5
 
-document.getElementById("endB").style.marginLeft = (window.innerWidth/2-100) +0+"px"
-document.getElementById("endR").style.marginLeft = (window.innerWidth/2-100) +100+"px"
+document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+"px"
+document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +150+"px"
 
 if(acc < 100 ){
   document.getElementById("acccc").style.marginLeft = (window.innerWidth/2) + 80 +"px"

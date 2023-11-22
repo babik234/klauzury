@@ -27,7 +27,14 @@ body{
     left: 48%;
 }
 .back{
+    margin-top: 92vh;
     position: absolute;
-    top: 90vh;
-    left: 1%;
+    left: 50px;
+    color: white;
+    font-size: 25px;
+    border: black 2px solid;
+    border-radius: 5px;
+    background-color: black;
+    padding: 5px;
+    text-decoration: none;
 }

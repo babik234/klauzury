@@ -10,9 +10,22 @@ body{
     background-color: rgb(146, 95, 95);
     width: 100%;
     border: black 2px solid;
+    position: absolute;
 }
 .obj{
     background-color: black;
     border-radius: 35px;
     display: inline-block;
+}
+.back{
+    margin-top: 92vh;
+    position: absolute;
+    left: 50px;
+    color: white;
+    font-size: 25px;
+    border: black 2px solid;
+    border-radius: 5px;
+    background-color: black;
+    padding: 5px;
+    text-decoration: none;
 }
