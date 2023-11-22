@@ -4,9 +4,7 @@ let points = 0
 let pointsKonec = 0
 let x_pos, y_pos, x_posB, y_posB, speedX, speedY;
 let obj = document.getElementById("obj");
-let button = document.getElementById("button");
 let game = document.getElementById("game");
-let buttonRestart = document.getElementById("restart")
 let acc = 0
 let accKonec = 0
 let accOn = 0
@@ -29,9 +27,8 @@ let trackingAverageScore = localStorage.getItem("trackingAverageScore")
 console.log(gameVH)
 console.log(vh)
 
-// pozice buttonu
+
 let z = window.innerHeight / 2 - 100;
-let buttonPlay = document.getElementById("button");
 
 // Intervaly id
 let intervalP = 0;
@@ -55,13 +52,7 @@ let intervalMinussAcc
 
 // css
 obj.style.display = "none"
-button.style.display = "block";
-game.style.display = "block";
-
-
-// button event listener
-buttonPlay.addEventListener("click",initializeGame)
-buttonPlay.addEventListener("click",hideButton)
+initializeGame() 
 // start hry
 function initializeGame() {
   x_pos = random(10, window.innerWidth - 80);
@@ -86,16 +77,10 @@ function initializeGame() {
 // restartuje stránku
 function restart(){
   location.reload()
+}
 
-}
-// schová button
-function hideButton(){
-  document.getElementById("p").style.display = "none";
-  document.getElementById("pp").style.display = "none";
-}
 
 // zapnuti stránky
-setButtonPosition();
 setPointsPositions();
 
 function setPointsPositions(){
@@ -122,11 +107,7 @@ if(acc < 100 ){
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-// button css
-function setButtonPosition() {
-  buttonPlay.style.marginTop = (window.innerHeight/2)-50 + "px";
-  buttonPlay.style.marginLeft = (window.innerWidth/2)-100  + "px";
-}
+
 // změny speedu
 function samuelY() {
   speedY = random(2, 3) * random(-3, 3);
@@ -135,6 +116,7 @@ function samuelY() {
 
 function samuelX() {
   speedX = random(2, 3) * random(-3, 3);
+
 }
 
 // vykreslování objektu
@@ -155,7 +137,8 @@ function samR() {
   y_pos += speedY;
   obj.style.position = "absolute";
   obj.style.left = x_pos + "px";
-  obj.style.top = y_pos + "px";
+  obj.style.top = y_pos + "px";  
+  console.log(speedX)
 }
 
 function responsibility(){
@@ -211,12 +194,11 @@ setInterval(accuracy,10)
 // vyhra
 function vyhra(){
 
-
-
   pointsKonec = points
   accKonec = acc
 
   game.style.display = "block";
+
   document.getElementById("vyhra").style.display = "block"
   endB.style.display = "block"
   endR.style.display = "block"
@@ -288,21 +270,15 @@ function scoreMI() {
 
 // start hry
 function startGame() {
-  button.style.display = "none";
-  game.style.display = "none";
   document.querySelectorAll('#acc, #accc, #acccc,#p,#pp,#back').forEach(item => {
     item.style.display = 'block';
 })
 }
 
-button.addEventListener("click", startGame);
-
 
 
 // intervaly
 setInterval(setPointsPositions,0)
-setInterval(setButtonPosition,0)
-
     
     function countdown() {
       if (timeLeft == -1) {

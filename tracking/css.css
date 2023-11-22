@@ -38,6 +38,7 @@ body{
     background-color: #444;
     position: absolute;
     z-index: -4;
+    display: none;
 }
 .screen{
     position: absolute;
@@ -59,38 +60,38 @@ body{
 
 #pp{
     position: absolute;
-    display:none ;
+
     margin-top: 90vh;
     text-align: center;
 }
 #p{
     margin-top: 90vh;
     position: absolute;
-    display: none;
+
     text-align: center;
 }
 #accc{
     position: absolute;
     display:none ;
-    margin-top: 90vh;
+;
     text-align: center;
 }
 #acccc{
     position: absolute;
-    display:none ;
+
     margin-top: 90vh;
     text-align: center;
 }
 #acc{
     margin-top: 90vh;
     position: absolute;
-    display: none;
+
     text-align: center;
 }
 #back{
     margin-top: 95vh;
     position: absolute;
-    display: none;
+
     text-align: center;
 }
 .score{
