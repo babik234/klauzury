@@ -70,8 +70,9 @@ function random(min, max) {
 
   obj.addEventListener("click",outFunction)
   obj.removeEventListener("click", middleFunction)
-  document.getElementById("pp").innerHTML = points
   points++
+  document.getElementById("pp").innerHTML = points
+  
 }
 
 function outFunction(){ 
