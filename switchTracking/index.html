@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lato:ital,wght@1,300;1,400&family=Roboto+Slab&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css.css">
     <title>switchTracking</title>
 </head>
 <body>
     
-<div id="game" class="game">
+    <div id="screen" class="screen"></div>
+    
+
+    <a id="endB" class="end" href="../index.html">Back</a>
+        <a id="endR" class="end" onclick="restart()" href="">Restart</a>
+
+
+    <div id="game" class="game">
+
     <div id="obj" class="obj"></div>
+
 <!--
     <div id="obj2" class="obj"></div>
     <div id="obj3" class="obj"></div>
 -->
     
 </div>
-<a href="../index.html" class="back">BACK</a>
+<a href="../index.html" class="back" id="back">BACK</a>
+
+<p id="pp">points:<p id="p">0</p></p>
+ 
+<p id="vyhra" class="vyhra">KONEC</p>
+<p id="score" class="score"></p>
+<p id="best" class="score"></p>
     <script src="javascript.js"></script>
 </body>
 </html>

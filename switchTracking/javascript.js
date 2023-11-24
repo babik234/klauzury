@@ -17,11 +17,17 @@ let switchtrackBestScore = localStorage.getItem("switchtrackBestScore")
 let hitPoints = 100
 let Minus = 0
 
-let timeLeft = 3;
+let timeLeft = 30;
 let timerId = 0;
 
 
 function responsibility(){
+  document.getElementById("p").style.marginLeft = ((window.innerWidth/2-100)-50) + 145 +"px"
+  document.getElementById("pp").style.marginLeft = ((window.innerWidth/2-100)-50)+"px"
+
+  document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+"px"
+  document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +150+"px"
+
     gameVH = window.innerHeight/100 * 87
     vh = window.innerHeight
     obj.style.height = vh/7 + "px"
@@ -38,7 +44,9 @@ function responsibility(){
 */
   }
   setInterval(responsibility,0)
-
+  function restart(){
+    location.reload()
+  }
 
   initializeGame()
 
@@ -72,6 +80,8 @@ function responsibility(){
     speedX = random(3, 3) * random(-1, 1);
   }
 
+
+
   function initializeGame() {
     hitPoints = 100
     x_pos = random(10, window.innerWidth - 80);
@@ -85,6 +95,7 @@ function responsibility(){
     obj.style.top = y_pos + "px";
   
     obj.style.display = "block"
+    document.getElementById("p").innerHTML = points
   }
   
   obj.addEventListener("mouseenter",damage)
@@ -106,6 +117,16 @@ function notDamage(){
 
 
 function vyhra(){
+  document.getElementById("screen").style.display = "block";
+
+  document.getElementById("vyhra").style.display = "block"
+
+  endB.style.display = "block"
+  endR.style.display = "block"
+  document.querySelectorAll('#p,#pp,#back').forEach(item => {
+    item.style.display = 'none';
+})
+
 switchtrackLastScore = points
 localStorage.setItem("switchtrackLastScore", switchtrackLastScore)
 
@@ -114,6 +135,9 @@ if(switchtrackLastScore >= switchtrackBestScore){
 switchtrackBestScore = switchtrackLastScore
 localStorage.setItem("switchtrackBestScore", switchtrackBestScore)
 }
+
+document.getElementById("score").innerHTML = "SCORE: " + points
+document.getElementById("best").innerHTML = "BEST: " + switchtrackBestScore
 
 switchtrackpocetHer++
 localStorage.setItem("switchtrackpocetHer",switchtrackpocetHer)
