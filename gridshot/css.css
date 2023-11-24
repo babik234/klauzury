@@ -24,7 +24,11 @@ body{
 .p{
     position: absolute;
     top: 90vh;
-    left: 48%;
+    font-size: 45px;
+           
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 .back{
     margin-top: 92vh;

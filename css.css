@@ -4,6 +4,7 @@
 }
 body{
     padding-bottom: 100px;
+    background-color: white;
 }
 .wrapper{
     display: flex;
@@ -71,4 +72,7 @@ a{
     font-family: 'Kdam Thmor Pro', sans-serif;
     font-family: 'Lato', sans-serif;
     font-family: 'Roboto Slab', serif;
+}
+.mode {
+    font-size: 15px;
 }

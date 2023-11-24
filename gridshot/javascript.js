@@ -158,7 +158,12 @@ function vyhra(){
     localStorage.setItem("gridshotAverageScore",Math.floor(gridshotAverageScore))
 
     }
+function responsivity(){
+ document.getElementById("p").style.left = (window.innerWidth/2-75) + 175 + "px"
+ document.getElementById("pp").style.left = window.innerWidth/2-75 + "px"
+}
 
+setInterval(responsivity,0)
 
 function countdown() {
     if (timeLeft == -1) {

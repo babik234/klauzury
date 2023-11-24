@@ -42,3 +42,29 @@ document.getElementById("STBS").innerHTML = switchtrackBestScore
 
 let switchtrackAverageScore = localStorage.getItem("switchtrackAverageScore")
 document.getElementById("STAS").innerHTML = switchtrackAverageScore 
+
+let mode = document.getElementById("mode")
+let button = 0
+
+function dark(){
+    if(button == 0){
+document.body.style.backgroundColor = "rgb(28, 26, 26)";
+button++
+document.querySelectorAll('#GSLS,#GSBS,#GSAS,#SSLS,#SSBS,#SSAS,#STLS,#STBS,#STAS,#TLS,#TBS,#TAS').forEach(item => {
+    item.style.color = "white"
+})
+}else if(button == 1){
+    document.body.style.backgroundColor = "white"; 
+    button--
+    document.querySelectorAll('#GSLS,#GSBS,#GSAS,#SSLS,#SSBS,#SSAS,#STLS,#STBS,#STAS,#TLS,#TBS,#TAS').forEach(item => {
+        item.style.color = "black"
+    })
+}
+}
+
+function resp(){
+    mode.style.position = "absolute";
+    mode.style.left = window.innerWidth- 75 + "px";
+    mode.style.top = window.innerHeight- (window.innerHeight - 10) + "px";
+}
+setInterval(resp,0)
