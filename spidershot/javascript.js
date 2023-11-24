@@ -10,11 +10,11 @@ let vh = window.innerHeight
 let x_pos1 = random(5,window.innerWidth - 40)
 let y_pos1 = random(5,((gameVH - vh/5)-5))
 
-let timeLeft = 3;
+let timeLeft = 30;
 let timerId = 0;
 
-let pocetHer = localStorage.getItem("pocetHer")
-let vsechnyScore = localStorage.getItem("vsechnyScore")
+let spidershotpocetHer = localStorage.getItem("spidershotpocetHer")
+let spidershotvsechnyScore = localStorage.getItem("spidershotvsechnyScore")
 
 let spidershotBestScore = localStorage.getItem("spidershotBestScore")
 let spidershotLastScore = localStorage.getItem("spidershotLastScore")
@@ -31,9 +31,12 @@ if(points == 1 ){
 }
 }
 
-document.getElementById("screen").style.width = (window.innerWidth - 80)
-document.getElementById("screen").style.height = (gameVH - vh/5)-5
-document.getElementById("pp").style.marginLeft = 75 + "px"
+function restart(){
+    location.reload()
+}
+
+
+
 
 obj.addEventListener("click",middleFunction)
 
@@ -100,6 +103,12 @@ function outFunction(){
     gameVH = window.innerHeight/100 * 87
     vh = window.innerHeight
 
+    document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+"px"
+    document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +150+"px"
+    
+    document.getElementById("screen").style.width = (window.innerWidth - 80)
+    document.getElementById("screen").style.height = (gameVH - vh/5)-5
+    document.getElementById("pp").style.marginLeft = 82 + "px"
 
     if(x_pos1 > window.innerWidth - 5){
         x_pos1 = window.innerWidth - (width/2 + 5)
@@ -132,6 +141,19 @@ function outFunction(){
   }
 
   function vyhra(){
+    game.style.display = "block";
+
+    document.getElementById("vyhra").style.display = "block"
+    endB.style.display = "block"
+    endR.style.display = "block"
+    document.querySelectorAll('#p,#pp,#back').forEach(item => {
+      item.style.display = 'none';
+  })
+
+
+
+
+
    spidershotLastScore = points
    localStorage.setItem("spidershotLastScore",spidershotLastScore)
 
@@ -139,26 +161,30 @@ function outFunction(){
     spidershotBestScore = spidershotLastScore
     localStorage.setItem("spidershotBestScore",spidershotBestScore)
    }
-
-   pocetHer++
-  localStorage.setItem("pocetHer",pocetHer)
+   document.getElementById("score").innerHTML = "BEST: " + points
+   document.getElementById("best").innerHTML = "SCORE: " + spidershotBestScore
   
-  let VsechnyScore = parseInt(vsechnyScore)
+
+
+   spidershotpocetHer++
+  localStorage.setItem("spidershotpocetHer",spidershotpocetHer)
+  
+  let VsechnyScore = parseInt(spidershotvsechnyScore)
   
   VsechnyScore += spidershotLastScore
   
-  spidershotAverageScore = VsechnyScore/pocetHer
+  spidershotAverageScore = VsechnyScore/spidershotpocetHer
   
   if(isNaN(VsechnyScore) == true){
       VsechnyScore = spidershotLastScore
-      localStorage.setItem("vsechnyScore",VsechnyScore)
+      localStorage.setItem("spidershotvsechnyScore",VsechnyScore)
   }
   if(isNaN(spidershotAverageScore) == true){
     spidershotAverageScore = spidershotLastScore
     localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
   }
   
-  localStorage.setItem("vsechnyScore",VsechnyScore)
+  localStorage.setItem("spidershotvsechnyScore",VsechnyScore)
   localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
 
   }

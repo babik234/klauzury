@@ -15,7 +15,7 @@ body{
 }
 img{
     width: 100%;
-    height: 407px;
+    height: 412px;
 }
 .games{
     margin-top: 100px;
@@ -23,6 +23,7 @@ img{
     width: 700px;
     height: 475px;
     border: black solid 5px;
+    
 }
 .games a{
     display: flex;
@@ -32,7 +33,7 @@ img{
     color: blue;
     font-size: 35px;
     border: 2px solid black;
-    width: 85px;
+    width: 115px;
     background-color: aqua;
     border-radius: 5px;
 }
@@ -41,6 +42,7 @@ img{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    
 }
 
 .games h1{
@@ -48,11 +50,25 @@ img{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 10px;
     font-size: 25px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 h2{
     text-align: center;
     font-size: 150px;
+    
 }
 p{
     padding: 5px;
+    font-size: 20px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+a{
+        
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }

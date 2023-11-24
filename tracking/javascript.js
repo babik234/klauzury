@@ -16,7 +16,7 @@ let vh = window.innerHeight
 let trackingvsechnyScore = localStorage.getItem("trackingvsechnyScore")
 let trackingpocetHer = localStorage.getItem("trackingpocetHer")
 
-let timeLeft = 3;
+let timeLeft = 30;
 let timerId = 0;
 
 
@@ -84,10 +84,10 @@ function restart(){
 setPointsPositions();
 
 function setPointsPositions(){
-document.getElementById("p").style.marginLeft = ((window.innerWidth/2)-100) + 45 +"px"
-document.getElementById("pp").style.marginLeft = ((window.innerWidth/2)-100)+"px"
-document.getElementById("acc").style.marginLeft = (window.innerWidth/2) + 62 +"px"
-document.getElementById("accc").style.marginLeft = (window.innerWidth/2) +0+"px"
+document.getElementById("p").style.marginLeft = ((window.innerWidth/2-100)-130) + 145 +"px"
+document.getElementById("pp").style.marginLeft = ((window.innerWidth/2-100)-130)+"px"
+document.getElementById("acc").style.marginLeft = (window.innerWidth/2-100) + 330 +"px"
+document.getElementById("accc").style.marginLeft = (window.innerWidth/2-100) +120+"px"
 document.getElementById("screen").style.width = (window.innerWidth - 80)
 document.getElementById("screen").style.height = (gameVH - vh/5)-5
 
@@ -95,11 +95,11 @@ document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+
 document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +150+"px"
 
 if(acc < 100 ){
-  document.getElementById("acccc").style.marginLeft = (window.innerWidth/2) + 80 +"px"
+  document.getElementById("acccc").style.marginLeft = (window.innerWidth/2) + 280 +"px"
 }else if(acc == 100){
-  document.getElementById("acccc").style.marginLeft = (window.innerWidth/2) + 88 +"px"
+  document.getElementById("acccc").style.marginLeft = (window.innerWidth/2) + 300 +"px"
 }if(acc < 10){
-  document.getElementById("acccc").style.marginLeft = (window.innerWidth/2) + 72 +"px"
+  document.getElementById("acccc").style.marginLeft = (window.innerWidth/2) + 255 +"px"
 }
 }
 
@@ -205,8 +205,6 @@ function vyhra(){
   document.querySelectorAll('#back,#acc, #accc, #acccc,#p,#pp').forEach(item => {
     item.style.display = 'none';
 })
-document.getElementById("best").innerHTML = "SCORE: " + Math.floor(accKonec)+ " %"
-document.getElementById("score").innerHTML = "BEST: " + pointsKonec
 
 
 
@@ -218,6 +216,11 @@ document.getElementById("score").innerHTML = "BEST: " + pointsKonec
     trackingBestScore = trackingLastScore
     localStorage.setItem("trackingBestScore", trackingBestScore)
   }
+
+
+  document.getElementById("score").innerHTML = "SCORE: " + pointsKonec
+  document.getElementById("best").innerHTML = "BEST: " + trackingBestScore 
+  document.getElementById("endAcc").innerHTML = "ACCURACY: " + Math.floor(accKonec)+ "%"
 
   trackingpocetHer++
   localStorage.setItem("trackingpocetHer",trackingpocetHer)

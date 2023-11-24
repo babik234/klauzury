@@ -3,8 +3,8 @@ let circle2 = document.getElementById("2")
 let circle3 = document.getElementById("3")
 let screen = document.getElementById("screen")
 
-let pocetHer = localStorage.getItem("pocetHer")
-let vsechnyScore = localStorage.getItem("vsechnyScore")
+let gridshotpocetHer = localStorage.getItem("gridshotpocetHer")
+let gridshotvsechnyScore = localStorage.getItem("gridshotvsechnyScore")
 
 let gridshotLastScore = localStorage.getItem("gridshotLastScore")
 let gridshotBestScore = localStorage.getItem("gridshotBestScore")
@@ -136,25 +136,25 @@ function vyhra(){
         localStorage.setItem("gridshotBestScore", gridshotBestScore )
     }
 
-    pocetHer++
-    localStorage.setItem("pocetHer",pocetHer)
+    gridshotpocetHer++
+    localStorage.setItem("gridshotpocetHer",gridshotpocetHer)
     
-    let VsechnyScore = parseInt(vsechnyScore)
+    let VsechnyScore = parseInt(gridshotvsechnyScore)
     
     VsechnyScore += gridshotLastScore
     
-    gridshotAverageScore = VsechnyScore/pocetHer
+    gridshotAverageScore = VsechnyScore/gridshotpocetHer
     
     if(isNaN(VsechnyScore) == true){
         VsechnyScore = gridshotLastScore
-        localStorage.setItem("vsechnyScore",VsechnyScore)
+        localStorage.setItem("gridshotvsechnyScore",VsechnyScore)
     }
     if(isNaN(gridshotAverageScore) == true){
       gridshotAverageScore = gridshotLastScore
       localStorage.setItem("gridshotAverageScore",Math.floor(gridshotAverageScore))
     }
     
-    localStorage.setItem("vsechnyScore",VsechnyScore)
+    localStorage.setItem("gridshotvsechnyScore",VsechnyScore)
     localStorage.setItem("gridshotAverageScore",Math.floor(gridshotAverageScore))
 
     }

@@ -3,17 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lato:ital,wght@1,300;1,400&family=Roboto+Slab&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css.css">
     <title>Spidershot</title>
 </head>
 <body>
-    <div class="game" id="screen">
+    <div id="game" class="game"></div>
+
+    
+    <a href="../index.html" class="end" id="endB">Back</a>
+    <a onclick="restart()" class="end" id="endR">Restart</a>
+
+
+    <div class="screen" id="screen">
 
      <div class="obj" id="obj"></div>
 
     </div>
-    <p id="p" class="p">points:<p id="pp" class="p">0</p></p>
-<a href="../index.html" class="back">BACK</a>
+
+
+
+
+    <p id="p" class="p">points:<p id="pp" class="p">0</p></p>   
+    <a href="../index.html" id="back" class="back">BACK</a>
+
+    <p id="vyhra" class="vyhra">KONEC</p>
+
+    <p id="score" class="score"></p>
+    <p id="best" class="score"></p>
+
 
     <script src="javascript.js"></script>
 </body>
