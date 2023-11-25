@@ -123,7 +123,7 @@ function vyhra(){
 
   endB.style.display = "block"
   endR.style.display = "block"
-  document.querySelectorAll('#p,#pp,#back').forEach(item => {
+  document.querySelectorAll('#p,#pp,#back,#time').forEach(item => {
     item.style.display = 'none';
 })
 
@@ -164,10 +164,12 @@ localStorage.setItem("switchtrackAverageScore",Math.floor(switchtrackAverageScor
 
 
 function countdown() {
-  if (timeLeft == -1) {
+  if (timeLeft == 0) {
     clearInterval(timerId)
     vyhra()
   } else {
+    document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
     timeLeft--;
   }
 }
+document.getElementById("time").innerHTML = "Timeleft: " + timeLeft

@@ -82,3 +82,9 @@ font-family: 'Roboto Slab', serif;
     font-size: 45px;
     text-align: center;
 }
+.time{
+    position: absolute;
+    top: 92vh;
+    left: 90%;
+    font-size: 25px;
+}

@@ -131,7 +131,12 @@ p{
 font-family: 'Lato', sans-serif;
 font-family: 'Roboto Slab', serif;
 }
-
+.time{
+    position: absolute;
+    top: 92vh;
+    left: 90%;
+    font-size: 25px;
+}
 /*
 BUTTON :
 https://codepen.io/arronhunt/pen/WWOOeO

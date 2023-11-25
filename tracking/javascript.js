@@ -202,7 +202,7 @@ function vyhra(){
   document.getElementById("vyhra").style.display = "block"
   endB.style.display = "block"
   endR.style.display = "block"
-  document.querySelectorAll('#back,#acc, #accc, #acccc,#p,#pp').forEach(item => {
+  document.querySelectorAll('#back,#acc, #accc, #acccc,#p,#pp,#time').forEach(item => {
     item.style.display = 'none';
 })
 
@@ -284,13 +284,15 @@ function startGame() {
 setInterval(setPointsPositions,0)
     
     function countdown() {
-      if (timeLeft == -1) {
+      if (timeLeft == 0) {
+        
         clearInterval(timerId)
         vyhra()
       } else {
+        document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
         timeLeft--;
+      
       }
     }
-    function reload(){
-      location.reload();
-    }
+    document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
+

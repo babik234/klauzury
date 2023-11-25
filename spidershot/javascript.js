@@ -23,13 +23,6 @@ let spidershotAverageScore = localStorage.getItem("spidershotAverageScore")
 points = 0
 
 
-obj.addEventListener("click",ahoj)
-
-function ahoj(){
-if(points == 1 ){
-  timerId = setInterval(countdown, 1000)
-}
-}
 
 function restart(){
     location.reload()
@@ -132,21 +125,22 @@ function outFunction(){
 
 
   function countdown() {
-    if (timeLeft == -1) {
+    if (timeLeft == 0) {
       clearInterval(timerId)
       vyhra()
     } else {
+      document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
       timeLeft--;
     }
   }
-
+  document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
   function vyhra(){
     game.style.display = "block";
 
     document.getElementById("vyhra").style.display = "block"
     endB.style.display = "block"
     endR.style.display = "block"
-    document.querySelectorAll('#p,#pp,#back').forEach(item => {
+    document.querySelectorAll('#p,#pp,#back,#time').forEach(item => {
       item.style.display = 'none';
   })
 
@@ -188,3 +182,13 @@ function outFunction(){
   localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
 
   }
+  let StartP =  document.getElementById("startP")
+let Start = document.getElementById("start")
+
+Start.addEventListener("click",start)
+
+function start(){
+ Start.style.display = "none"  
+ StartP.style.display = "none"  
+ timerId =  setInterval(countdown, 1000)
+}

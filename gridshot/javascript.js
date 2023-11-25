@@ -10,7 +10,7 @@ let gridshotLastScore = localStorage.getItem("gridshotLastScore")
 let gridshotBestScore = localStorage.getItem("gridshotBestScore")
 let gridshotAverageScore = localStorage.getItem("gridshotAverageScore")
 
-let timeLeft = 3;
+let timeLeft = 30;
 let timerId = 0;
 
 let points = 0
@@ -73,7 +73,7 @@ circle3.addEventListener("click",click3)
 
 
 function click1(){
-        x_pos1 = random(5,window.innerWidth - 40)
+        x_pos1 = random(5,window.innerWidth - 45)
         y_pos1 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
             
@@ -92,7 +92,7 @@ function click1(){
 }
 
 function click2(){
-        x_pos2 = random(5,window.innerWidth - 40)
+        x_pos2 = random(5,window.innerWidth - 45)
         y_pos2 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
             
@@ -110,7 +110,7 @@ function click2(){
     console.log(x_pos2)
 }
 function click3(){
-        x_pos3 = random(5,window.innerWidth - 40)
+        x_pos3 = random(5,window.innerWidth - 45)
         y_pos3 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
             
@@ -125,9 +125,20 @@ function click3(){
 
 
 
-timerId =  setInterval(countdown, 1000)
+
  
 function vyhra(){
+
+    game.style.display = "block";
+
+    document.getElementById("vyhra").style.display = "block"
+    endB.style.display = "block"
+    endR.style.display = "block"
+    document.querySelectorAll('#p,#pp,#back,#time').forEach(item => {
+      item.style.display = 'none';
+  })
+  
+
     gridshotLastScore = points
     localStorage.setItem("gridshotLastScore", gridshotLastScore)
    
@@ -135,6 +146,12 @@ function vyhra(){
         gridshotBestScore = gridshotLastScore
         localStorage.setItem("gridshotBestScore", gridshotBestScore )
     }
+
+
+
+    document.getElementById("score").innerHTML = "SCORE: " + points
+    document.getElementById("best").innerHTML = "BEST: " + gridshotLastScore 
+
 
     gridshotpocetHer++
     localStorage.setItem("gridshotpocetHer",gridshotpocetHer)
@@ -158,18 +175,37 @@ function vyhra(){
     localStorage.setItem("gridshotAverageScore",Math.floor(gridshotAverageScore))
 
     }
+
 function responsivity(){
  document.getElementById("p").style.left = (window.innerWidth/2-75) + 175 + "px"
  document.getElementById("pp").style.left = window.innerWidth/2-75 + "px"
+
+ document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+"px"
+document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +150+"px"
 }
 
 setInterval(responsivity,0)
 
 function countdown() {
-    if (timeLeft == -1) {
+    if (timeLeft == 0) {
     clearInterval(timerId)
     vyhra()
     } else {
+        document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
     timeLeft--;
     }
+}
+document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
+function restart(){
+    location.reload()
+}
+let StartP =  document.getElementById("startP")
+let Start = document.getElementById("start")
+
+Start.addEventListener("click",start)
+
+function start(){
+ Start.style.display = "none"  
+ StartP.style.display = "none"  
+ timerId =  setInterval(countdown, 1000)
 }
