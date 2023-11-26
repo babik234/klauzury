@@ -74,5 +74,32 @@ a{
     font-family: 'Roboto Slab', serif;
 }
 .mode {
-    font-size: 15px;
+    font-size: 10px;
+    position: fixed;
+    top: 3%;
+    left: 97%;
+    width: 40px;
+    height: 20px;
+    border-radius: 15px;
+
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #dad1d1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

@@ -50,7 +50,7 @@ function responsibility(){
 
   initializeGame()
 
-  timerId =  setInterval(countdown, 1000)
+
 
   function samR() {
     if (x_pos >= window.innerWidth - 80) {
@@ -173,3 +173,14 @@ function countdown() {
   }
 }
 document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
+
+let StartP =  document.getElementById("startP")
+let Start = document.getElementById("start")
+
+Start.addEventListener("click",start)
+
+function start(){
+ Start.style.display = "none"  
+ StartP.style.display = "none"  
+ timerId =  setInterval(countdown, 1000)
+}

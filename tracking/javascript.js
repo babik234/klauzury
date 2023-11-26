@@ -66,8 +66,6 @@ function initializeGame() {
   intervalSa = setInterval(samuelX, 1000);
   intervalR = setInterval(samR, 20);
 
-  timerId =  setInterval(countdown, 1000)
-
   obj.style.position = "absolute";
   obj.style.left = x_pos + "px";
   obj.style.top = y_pos + "px";
@@ -296,3 +294,13 @@ setInterval(setPointsPositions,0)
     }
     document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
 
+    let StartP =  document.getElementById("startP")
+    let Start = document.getElementById("start")
+    
+    Start.addEventListener("click",start)
+    
+    function start(){
+     Start.style.display = "none"  
+     StartP.style.display = "none"  
+     timerId =  setInterval(countdown, 1000)
+    }
