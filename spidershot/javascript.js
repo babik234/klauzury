@@ -73,7 +73,7 @@ function random(min, max) {
 
 function outFunction(){ 
 
-    x_pos1 = random(5,window.innerWidth - 40)
+    x_pos1 = random(5,window.innerWidth - 50)
     y_pos1 = random(5,(gameVH - vh/5)-5)
  
     width = random(25,100)
@@ -101,7 +101,7 @@ function outFunction(){
     
     document.getElementById("screen").style.width = (window.innerWidth - 80)
     document.getElementById("screen").style.height = (gameVH - vh/5)-5
-    document.getElementById("pp").style.marginLeft = 82 + "px"
+    document.getElementById("pp").style.marginLeft = 150 + "px"
 
     if(x_pos1 > window.innerWidth - 5){
         x_pos1 = window.innerWidth - (width/2 + 5)

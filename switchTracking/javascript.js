@@ -22,8 +22,8 @@ let timerId = 0;
 
 
 function responsibility(){
-  document.getElementById("p").style.marginLeft = ((window.innerWidth/2-100)-50) + 145 +"px"
-  document.getElementById("pp").style.marginLeft = ((window.innerWidth/2-100)-50)+"px"
+  document.getElementById("p").style.marginLeft = (window.innerWidth/2-100) + 145 +"px"
+  document.getElementById("pp").style.marginLeft = (window.innerWidth/2-100)+"px"
 
   document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+"px"
   document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +150+"px"
