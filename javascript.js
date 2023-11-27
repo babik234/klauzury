@@ -75,4 +75,11 @@ document.getElementById("mode").innerHTML = "black"
 document.getElementById("mode").innerHTML = "white"
 }
 }
-
+if(spidershotAverageScore == null){
+    spidershotAverageScore = 0
+    localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
+}
+if(spidershotLastScore == null){
+  spidershotLastScore = 0
+  localStorage.setItem("spidershotLastScore",spidershotLastScore)
+}
