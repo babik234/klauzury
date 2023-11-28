@@ -55,10 +55,10 @@ function dark(){
 document.body.style.backgroundColor = "rgb(28, 26, 26)";
 button++
 document.querySelectorAll('#GSLS,#GSBS,#GSAS,#SSLS,#SSBS,#SSAS,#STLS,#STBS,#STAS,#TLS,#TBS,#TAS,#h2,#h1').forEach(item => {
-    item.style.color = "white"
+    item.style.color = "#999"
 })
 document.querySelectorAll('#games').forEach(item => {
-    item.style.borderColor = "white";
+    item.style.borderColor = "black";
 })
 document.getElementById("mode").innerHTML = "black"
 
@@ -77,9 +77,9 @@ document.getElementById("mode").innerHTML = "white"
 }
 if(spidershotAverageScore == null){
     spidershotAverageScore = 0
+    spidershotLastScore = 0
+    spidershotBestScore = 0
     localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
-}
-if(spidershotLastScore == null){
-  spidershotLastScore = 0
-  localStorage.setItem("spidershotLastScore",spidershotLastScore)
+    localStorage.setItem("spidershotBestScore",spidershotBestScore)
+    localStorage.setItem("spidershotLastScore",spidershotLastScore)
 }

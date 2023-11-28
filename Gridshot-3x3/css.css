@@ -1,0 +1,14 @@
+.s{
+    width: 130px;
+    height: 130px;
+    border-radius:100%;
+    border: 3px black solid;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,130px);
+    grid-template-rows: repeat(3,130px);
+    margin-left: 35%;
+    margin-top: 10%;
+    gap: 50px;
+}
