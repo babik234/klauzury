@@ -11,9 +11,13 @@
 </head>
 <body>  
         <div id="game" class="game"></div> 
+        <div class="start" id="start"></div>
+        <p id="startP" class="startP">Click anywhere to start</p>
         <div id="screen" class="screen"></div>
         
-
+   
+        <a href="../index.html" class="end" id="endB">Back</a>
+        <a onclick="restart()" class="end" id="endR">Restart</a>
 
     <div class="wrapper" id="wrapper">
     <div id="1"class="s"></div>
@@ -29,6 +33,14 @@
 
     <p id="points" class="points"></p>
     <a id="back" class="back" href="../index.html">BACK</a>
+
+    <p class="time" id="time"></p>
+    
+
+    <p id="vyhra" class="vyhra">KONEC</p>
+
+    <p id="score" class="score"></p>
+    <p id="best" class="score"></p>
     <script src="javascript.js"></script>
 </body>
 </html>

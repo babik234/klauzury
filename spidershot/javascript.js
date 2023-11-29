@@ -23,8 +23,8 @@ let spidershotAverageScore = localStorage.getItem("spidershotAverageScore")
 points = 0
 
 
-
-if(spidershotAverageScore && spidershotBestScore && spidershotLastScore == null){
+/*
+if(spidershotAverageScore && spidershotBestScore && spidershotLastScore === null){
   spidershotAverageScore = 0
   spidershotLastScore = 0
   spidershotBestScore = 0
@@ -33,7 +33,7 @@ if(spidershotAverageScore && spidershotBestScore && spidershotLastScore == null)
   localStorage.setItem("spidershotLastScore",spidershotLastScore)
 }
 
-
+*/
 
 
 

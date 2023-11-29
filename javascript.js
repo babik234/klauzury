@@ -76,7 +76,7 @@ document.getElementById("mode").innerHTML = "white"
 }
 }
 
-
+/*
 if(spidershotAverageScore || spidershotBestScore || spidershotLastScore == null){
     spidershotAverageScore = 0
     spidershotLastScore = 0
@@ -111,6 +111,6 @@ if( switchtrackAverageScore || switchtrackBestScore || switchtrackLastScore == n
     localStorage.setItem("switchtrackAverageScore",Math.floor(switchtrackAverageScore))
     localStorage.setItem("switchtrackBestScore",switchtrackBestScore)
     localStorage.setItem("switchtrackLastScore",switchtrackLastScore)
-}
+}*/
 
 

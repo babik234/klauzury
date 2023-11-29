@@ -12,7 +12,7 @@ let switchtrackpocetHer = localStorage.getItem("switchtrackpocetHer")
 let switchtrackAverageScore = localStorage.getItem("switchtrackAverageScore")
 let switchtrackLastScore = localStorage.getItem("switchtrackLastScore")
 let switchtrackBestScore = localStorage.getItem("switchtrackBestScore")
-
+/*
 if( switchtrackAverageScore && switchtrackBestScore && switchtrackLastScore == null){
   switchtrackAverageScore = 0
   switchtrackLastScore = 0
@@ -21,7 +21,7 @@ if( switchtrackAverageScore && switchtrackBestScore && switchtrackLastScore == n
   localStorage.setItem("switchtrackBestScore",switchtrackBestScore)
   localStorage.setItem("switchtrackLastScore",switchtrackLastScore)
 }
-
+*/
 
 let hitPoints = 100
 let Minus = 0

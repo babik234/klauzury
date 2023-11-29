@@ -8,6 +8,9 @@ let x = 0
 let y = 0
 let z = 0
 
+let timeLeft = 3
+let timerId = 0
+
 const circles = document.querySelector('.wrapper').querySelectorAll("div");
 
 for(let l = 0;l<9;l++){
@@ -17,12 +20,12 @@ for(let l = 0;l<9;l++){
  document.getElementById("points").innerHTML = "Points: " + points
 
 
-game()
+hra()
 
 function random(min,max) {
     return Math.floor((Math.random())*(max-min+1))+min;
    }
-   function game(){
+   function hra(){
    do{
     x = random(1,9)
     y = random(1,9)
@@ -81,18 +84,6 @@ function random(min,max) {
     for(let l = 0;l<9;l++){
         circles[l].addEventListener("click",function () {spawn(l)})
      }
-     
-   /* 
-     for(let m = 0;m<3;m++){
-
-        for(let n = 0;n<3;n++){
-          if(pole[m][n] === 1){
-            points = -1
-              points++
-          }
-          }
-      }*/
-
       function spawn(index){ 
         if(circles[index].style.background === "black"){
             points ++
@@ -119,9 +110,91 @@ function random(min,max) {
                  pole[m][n] = 0      
                   }
                 }
-            game()
+            hra()
            }
            
         }
     
     setInterval(check,1)
+
+
+    function countdown() {
+        if (timeLeft == 0) {
+          clearInterval(timerId)
+         vyhra()
+        } else {
+          document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
+          timeLeft--;
+        }
+      }
+      document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
+
+
+      function vyhra(){
+
+        document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+"px"
+        document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +150+"px"
+
+        game.style.display = "block";
+    
+        document.getElementById("vyhra").style.display = "block"
+        endB.style.display = "block"
+        endR.style.display = "block"
+        document.querySelectorAll('#points,#back,#time').forEach(item => {
+          item.style.display = 'none';
+      })
+      for(let v = 0;v<9;v++){
+        circles[v].style.display = "none"
+          }
+    
+    
+    /*
+       spidershotLastScore = points
+       localStorage.setItem("spidershotLastScore",spidershotLastScore)
+    
+       if(spidershotLastScore >= spidershotBestScore){
+        spidershotBestScore = spidershotLastScore
+        localStorage.setItem("spidershotBestScore",spidershotBestScore)
+       }
+       document.getElementById("score").innerHTML = "BEST: " + points
+       document.getElementById("best").innerHTML = "SCORE: " + spidershotBestScore
+      
+    
+    
+       spidershotpocetHer++
+      localStorage.setItem("spidershotpocetHer",spidershotpocetHer)
+      
+      let VsechnyScore = parseInt(spidershotvsechnyScore)
+      
+      VsechnyScore += spidershotLastScore
+      
+      spidershotAverageScore = VsechnyScore/spidershotpocetHer
+      
+      if(isNaN(VsechnyScore) == true){
+          VsechnyScore = spidershotLastScore
+          localStorage.setItem("spidershotvsechnyScore",VsechnyScore)
+      }
+      if(isNaN(spidershotAverageScore) == true){
+        spidershotAverageScore = spidershotLastScore
+        localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
+      }
+      
+      localStorage.setItem("spidershotvsechnyScore",VsechnyScore)
+      localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
+    */
+      }
+    
+      let StartP =  document.getElementById("startP")
+    let Start = document.getElementById("start")
+    
+    Start.addEventListener("click",start)
+    
+    function start(){
+     Start.style.display = "none"  
+     StartP.style.display = "none"  
+     timerId =  setInterval(countdown, 1000)
+    }
+
+   function restart(){
+    location.reload()
+   }
