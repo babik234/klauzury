@@ -75,7 +75,9 @@ document.getElementById("mode").innerHTML = "black"
 document.getElementById("mode").innerHTML = "white"
 }
 }
-if(spidershotAverageScore == null){
+
+
+if(spidershotAverageScore || spidershotBestScore || spidershotLastScore == null){
     spidershotAverageScore = 0
     spidershotLastScore = 0
     spidershotBestScore = 0
@@ -83,3 +85,32 @@ if(spidershotAverageScore == null){
     localStorage.setItem("spidershotBestScore",spidershotBestScore)
     localStorage.setItem("spidershotLastScore",spidershotLastScore)
 }
+
+if(gridshotAverageScore || gridshotBestScore || gridshotLastScore == null){
+    gridshotAverageScore = 0
+    gridshotLastScore = 0
+    gridshotBestScore = 0
+    localStorage.setItem("gridshotAverageScore",Math.floor(gridshotAverageScore))
+    localStorage.setItem("gridshotBestScore",gridshotBestScore)
+    localStorage.setItem("gridshotLastScore",gridshotLastScore)
+}
+
+if(trackingAverageScore || trackingBestScore || trackingLastScore  == null){
+    trackingAverageScore = 0
+    trackingLastScore = 0
+    trackingBestScore = 0
+    localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
+    localStorage.setItem("trackingBestScore",trackingBestScore)
+    localStorage.setItem("trackingLastScore",trackingLastScore)
+}
+
+if( switchtrackAverageScore || switchtrackBestScore || switchtrackLastScore == null){
+    switchtrackAverageScore = 0
+    switchtrackLastScore = 0
+    switchtrackBestScore = 0
+    localStorage.setItem("switchtrackAverageScore",Math.floor(switchtrackAverageScore))
+    localStorage.setItem("switchtrackBestScore",switchtrackBestScore)
+    localStorage.setItem("switchtrackLastScore",switchtrackLastScore)
+}
+
+

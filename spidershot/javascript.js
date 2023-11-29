@@ -24,6 +24,19 @@ points = 0
 
 
 
+if(spidershotAverageScore && spidershotBestScore && spidershotLastScore == null){
+  spidershotAverageScore = 0
+  spidershotLastScore = 0
+  spidershotBestScore = 0
+  localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
+  localStorage.setItem("spidershotBestScore",spidershotBestScore)
+  localStorage.setItem("spidershotLastScore",spidershotLastScore)
+}
+
+
+
+
+
 function restart(){
     location.reload()
 }

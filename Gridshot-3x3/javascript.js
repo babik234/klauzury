@@ -2,21 +2,32 @@ let pole = [[0,0,0],
             [0,0,0],
             [0,0,0]]
 
-const circles = document.querySelector('.wrapper').querySelectorAll("div");
-
+             
+let points = 0
 let x = 0
 let y = 0
 let z = 0
 
-do{
-    x = random(1,9)
-    y = random(1,9)
-    z = random(1,9)
-}while(x == y || x == z || y == x || y == z || z == x || z == y)
+const circles = document.querySelector('.wrapper').querySelectorAll("div");
+
+for(let l = 0;l<9;l++){
+    circles[l].style.background = "grey"
+ }
+
+ document.getElementById("points").innerHTML = "Points: " + points
+
+
+game()
 
 function random(min,max) {
     return Math.floor((Math.random())*(max-min+1))+min;
    }
+   function game(){
+   do{
+    x = random(1,9)
+    y = random(1,9)
+    z = random(1,9)
+}while(x == y || x == z || y == x || y == z || z == x || z == y)
 
    for(let i = 0;i<3;i++){
 
@@ -62,16 +73,55 @@ function random(min,max) {
     }
 
    }
+   console.log(pole) 
+   console.log("dkgis")
+
+}
 
     for(let l = 0;l<9;l++){
         circles[l].addEventListener("click",function () {spawn(l)})
      }
      
+   /* 
+     for(let m = 0;m<3;m++){
+
+        for(let n = 0;n<3;n++){
+          if(pole[m][n] === 1){
+            points = -1
+              points++
+          }
+          }
+      }*/
+
+      function spawn(index){ 
+        if(circles[index].style.background === "black"){
+            points ++
+            circles[index].style.background = "grey"
+
+        } 
+
+    }
+
+
+
+    function check(){
+        let circlesN = 0
+        for(let v = 0;v<9;v++){
+            if(circles[v].style.background === "grey" ) { 
+           circlesN++
+            document.getElementById("points").innerHTML = "Points: " + points
+            }
+           }
+           if (circlesN === 9) {
+
+            for(let m = 0;m<3;m++){
+             for(let n = 0;n<3;n++){
+                 pole[m][n] = 0      
+                  }
+                }
+            game()
+           }
+           
+        }
     
-   spawn(l){
-    if(
-       for(let o = 0;o<3;o++){
-        for(let p = 0;p<0)
-       }
-    )
-   }
+    setInterval(check,1)

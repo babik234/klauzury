@@ -1,8 +1,10 @@
+*{
+    margin: 0
+}
 .s{
     width: 130px;
     height: 130px;
     border-radius:100%;
-    border: 3px black solid;
 }
 .wrapper{
     display: grid;
@@ -11,4 +13,35 @@
     margin-left: 35%;
     margin-top: 10%;
     gap: 50px;
+    position: absolute;
+}
+.screen{
+    background-color: grey;
+    height: 87vh;
+    width: 100%;
+    position: absolute;
+}
+.points{
+    position: absolute;
+    left: 43%;
+    top: 90vh;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-size: 45px;
+}
+#back{
+    margin-top: 92vh;
+    position: absolute;
+    left: 50px;
+    color: white;
+    font-size: 25px;
+    border: black 2px solid;
+    border-radius: 5px;
+    background-color: black;
+    padding: 5px;
+    text-decoration: none;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto Slab', serif;
 }

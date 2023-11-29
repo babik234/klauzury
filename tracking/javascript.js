@@ -24,6 +24,16 @@ let trackingLastScore = localStorage.getItem("trackingLastScore")
 let trackingBestScore = localStorage.getItem("trackingBestScore")
 let trackingAverageScore = localStorage.getItem("trackingAverageScore")
 
+
+if(trackingAverageScore && trackingBestScore && trackingLastScore  == null){
+  trackingAverageScore = 0
+  trackingLastScore = 0
+  trackingBestScore = 0
+  localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
+  localStorage.setItem("trackingBestScore",trackingBestScore)
+  localStorage.setItem("trackingLastScore",trackingLastScore)
+}
+
 console.log(gameVH)
 console.log(vh)
 
