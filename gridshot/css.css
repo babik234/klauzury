@@ -10,7 +10,7 @@ body{
     width: 100%;
     height: 87vh;
     z-index: -5;
-    background-color: rgb(129, 87, 87);
+    background-color: #bbb;
     border-top: solid black 5px;
     border-bottom: solid black 5px;
 }

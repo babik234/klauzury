@@ -43,6 +43,17 @@ document.getElementById("STBS").innerHTML ="bestscore: " +  switchtrackBestScore
 let switchtrackAverageScore = localStorage.getItem("switchtrackAverageScore")
 document.getElementById("STAS").innerHTML ="Averagescore: " +  switchtrackAverageScore 
 
+
+
+let gridshot3x3LastScore = localStorage.getItem("gridshot3x3LastScore")
+document.getElementById("G3LS").innerHTML ="Lastscore: "+ gridshot3x3LastScore
+
+let gridshot3x3BestScore = localStorage.getItem("gridshot3x3BestScore")
+document.getElementById("G3BS").innerHTML ="bestscore: " +  gridshot3x3BestScore
+
+let gridshot3x3AverageScore = localStorage.getItem("gridshot3x3AverageScore")
+document.getElementById("G3AS").innerHTML ="Averagescore: " +  gridshot3x3AverageScore 
+
 let mode = document.getElementById("mode")
 
 mode.innerHTML = "white"
@@ -76,41 +87,7 @@ document.getElementById("mode").innerHTML = "white"
 }
 }
 
-/*
-if(spidershotAverageScore || spidershotBestScore || spidershotLastScore == null){
-    spidershotAverageScore = 0
-    spidershotLastScore = 0
-    spidershotBestScore = 0
-    localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
-    localStorage.setItem("spidershotBestScore",spidershotBestScore)
-    localStorage.setItem("spidershotLastScore",spidershotLastScore)
-}
 
-if(gridshotAverageScore || gridshotBestScore || gridshotLastScore == null){
-    gridshotAverageScore = 0
-    gridshotLastScore = 0
-    gridshotBestScore = 0
-    localStorage.setItem("gridshotAverageScore",Math.floor(gridshotAverageScore))
-    localStorage.setItem("gridshotBestScore",gridshotBestScore)
-    localStorage.setItem("gridshotLastScore",gridshotLastScore)
-}
 
-if(trackingAverageScore || trackingBestScore || trackingLastScore  == null){
-    trackingAverageScore = 0
-    trackingLastScore = 0
-    trackingBestScore = 0
-    localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
-    localStorage.setItem("trackingBestScore",trackingBestScore)
-    localStorage.setItem("trackingLastScore",trackingLastScore)
-}
-
-if( switchtrackAverageScore || switchtrackBestScore || switchtrackLastScore == null){
-    switchtrackAverageScore = 0
-    switchtrackLastScore = 0
-    switchtrackBestScore = 0
-    localStorage.setItem("switchtrackAverageScore",Math.floor(switchtrackAverageScore))
-    localStorage.setItem("switchtrackBestScore",switchtrackBestScore)
-    localStorage.setItem("switchtrackLastScore",switchtrackLastScore)
-}*/
 
 

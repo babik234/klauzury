@@ -13,6 +13,13 @@ let timerId = 0
 
 const circles = document.querySelector('.wrapper').querySelectorAll("div");
 
+
+let gridshot3x3vsechnyScore = localStorage.getItem("gridshot3x3vsechnyScore")
+let gridshot3x3pocetHer = localStorage.getItem("gridshot3x3pocetHer")
+let gridshot3x3AverageScore = localStorage.getItem("gridshot3x3AverageScore")
+let gridshot3x3LastScore = localStorage.getItem("gridshot3x3LastScore")
+let gridshot3x3BestScore = localStorage.getItem("gridshot3x3BestScore")
+
 for(let l = 0;l<9;l++){
     circles[l].style.background = "grey"
  }
@@ -148,40 +155,40 @@ function random(min,max) {
           }
     
     
-    /*
-       spidershotLastScore = points
-       localStorage.setItem("spidershotLastScore",spidershotLastScore)
+
+        gridshot3x3LastScore = points
+       localStorage.setItem("gridshot3x3LastScore",gridshot3x3LastScore)
     
-       if(spidershotLastScore >= spidershotBestScore){
-        spidershotBestScore = spidershotLastScore
-        localStorage.setItem("spidershotBestScore",spidershotBestScore)
+       if(gridshot3x3LastScore >= gridshot3x3BestScore){
+        gridshot3x3BestScore = gridshot3x3LastScore
+        localStorage.setItem("gridshot3x3BestScore",gridshot3x3BestScore)
        }
        document.getElementById("score").innerHTML = "BEST: " + points
-       document.getElementById("best").innerHTML = "SCORE: " + spidershotBestScore
+       document.getElementById("best").innerHTML = "SCORE: " + gridshot3x3BestScore
       
     
     
-       spidershotpocetHer++
-      localStorage.setItem("spidershotpocetHer",spidershotpocetHer)
+       gridshot3x3pocetHer++
+      localStorage.setItem("gridshot3x3pocetHer",gridshot3x3pocetHer)
       
-      let VsechnyScore = parseInt(spidershotvsechnyScore)
+      let VsechnyScore = parseInt(gridshot3x3vsechnyScore)
       
-      VsechnyScore += spidershotLastScore
+      VsechnyScore += gridshot3x3LastScore
       
-      spidershotAverageScore = VsechnyScore/spidershotpocetHer
+      gridshot3x3AverageScore = VsechnyScore/gridshot3x3pocetHer
       
       if(isNaN(VsechnyScore) == true){
-          VsechnyScore = spidershotLastScore
-          localStorage.setItem("spidershotvsechnyScore",VsechnyScore)
+          VsechnyScore = gridshot3x3LastScore
+          localStorage.setItem("gridshot3x3vsechnyScore",VsechnyScore)
       }
-      if(isNaN(spidershotAverageScore) == true){
-        spidershotAverageScore = spidershotLastScore
-        localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
+      if(isNaN(gridshot3x3AverageScore) == true){
+        gridshot3x3AverageScore = gridshot3x3LastScore
+        localStorage.setItem("gridshot3x3AverageScore",Math.floor(gridshot3x3AverageScore))
       }
       
-      localStorage.setItem("spidershotvsechnyScore",VsechnyScore)
-      localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
-    */
+      localStorage.setItem("gridshot3x3vsechnyScore",VsechnyScore)
+      localStorage.setItem("gridshot3x3AverageScore",Math.floor(gridshot3x3AverageScore))
+   
       }
     
       let StartP =  document.getElementById("startP")

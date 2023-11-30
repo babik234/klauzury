@@ -4,6 +4,7 @@
 body{
     cursor: crosshair;
     caret-color: white;
+    z-index: 100;
 }
 .s{
     width: 130px;
@@ -29,7 +30,7 @@ body{
     position: absolute;
 }
 .screen{
-    background-color: grey;
+    background-color: #bbb;
     height: 87vh;
     z-index: -5;
     width: 100%;
