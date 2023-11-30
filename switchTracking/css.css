@@ -7,7 +7,7 @@ body{
 }
 .game{
     height: 87vh;
-    background-color: rgb(146, 95, 95);
+    background-color: #bbb;
     width: 100%;
     z-index: -5;
     border: black 2px solid;
