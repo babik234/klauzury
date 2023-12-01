@@ -8,7 +8,7 @@ let x = 0
 let y = 0
 let z = 0
 
-let timeLeft = 3
+let timeLeft = 30
 let timerId = 0
 
 const circles = document.querySelector('.wrapper').querySelectorAll("div");

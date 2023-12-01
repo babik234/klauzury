@@ -25,7 +25,7 @@ body{
     grid-template-columns: repeat(3,130px);
     grid-template-rows: repeat(3,130px);
     margin-left: 35%;
-    margin-top: 10%;
+    margin-top: 17vh;
     gap: 50px;
     position: absolute;
 }
