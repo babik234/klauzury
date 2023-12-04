@@ -28,13 +28,13 @@ let points = 0
 console.log(screen.getBoundingClientRect())
 
 
-x_pos1 = random(5,window.innerWidth - 40)
+x_pos1 = random(5,window.innerWidth - 65)
 y_pos1 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
-x_pos2 = random(5,window.innerWidth - 40)
+x_pos2 = random(5,window.innerWidth - 65)
 y_pos2 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
-x_pos3 = random(5,window.innerWidth - 40)
+x_pos3 = random(5,window.innerWidth - 65)
 y_pos3 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
 console.log(y_pos1)
@@ -83,7 +83,7 @@ circle3.addEventListener("click",click3)
 
 
 function click1(){
-        x_pos1 = random(5,window.innerWidth - 45)
+        x_pos1 = random(5,window.innerWidth - 65)
         y_pos1 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
             
@@ -102,7 +102,7 @@ function click1(){
 }
 
 function click2(){
-        x_pos2 = random(5,window.innerWidth - 45)
+        x_pos2 = random(5,window.innerWidth - 65)
         y_pos2 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
             
@@ -120,7 +120,7 @@ function click2(){
     console.log(x_pos2)
 }
 function click3(){
-        x_pos3 = random(5,window.innerWidth - 45)
+        x_pos3 = random(5,window.innerWidth - 65)
         y_pos3 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
             
