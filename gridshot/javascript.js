@@ -10,16 +10,6 @@ let gridshotLastScore = localStorage.getItem("gridshotLastScore")
 let gridshotBestScore = localStorage.getItem("gridshotBestScore")
 let gridshotAverageScore = localStorage.getItem("gridshotAverageScore")
 
-
-if(gridshotAverageScore && gridshotBestScore && gridshotLastScore == null){
-    gridshotAverageScore = 0
-    gridshotLastScore = 0
-    gridshotBestScore = 0
-    localStorage.setItem("gridshotAverageScore",Math.floor(gridshotAverageScore))
-    localStorage.setItem("gridshotBestScore",gridshotBestScore)
-    localStorage.setItem("gridshotLastScore",gridshotLastScore)
-}
-
 let timeLeft = 30;
 let timerId = 0;
 

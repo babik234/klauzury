@@ -16,7 +16,7 @@ let vh = window.innerHeight
 let trackingvsechnyScore = localStorage.getItem("trackingvsechnyScore")
 let trackingpocetHer = localStorage.getItem("trackingpocetHer")
 
-let timeLeft = 30;
+let timeLeft = 3;
 let timerId = 0;
 
 
@@ -24,16 +24,6 @@ let trackingLastScore = localStorage.getItem("trackingLastScore")
 let trackingBestScore = localStorage.getItem("trackingBestScore")
 let trackingAverageScore = localStorage.getItem("trackingAverageScore")
 
-/*
-if(trackingAverageScore && trackingBestScore && trackingLastScore  == null){
-  trackingAverageScore = 0
-  trackingLastScore = 0
-  trackingBestScore = 0
-  localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
-  localStorage.setItem("trackingBestScore",trackingBestScore)
-  localStorage.setItem("trackingLastScore",trackingLastScore)
-}
-*/
 console.log(gameVH)
 console.log(vh)
 
@@ -58,6 +48,11 @@ let intervalPlusAcc
 let intervalPlussAcc
 let intervalMinusAcc
 let intervalMinussAcc
+
+
+
+
+
 
 
 // css
@@ -218,11 +213,11 @@ function vyhra(){
 
   
   trackingLastScore = pointsKonec
-  localStorage.setItem("trackingLastScore", trackingLastScore)
+  localStorage.setItem("trackingLastScore",trackingLastScore)
 
   if(trackingLastScore >= trackingBestScore){
     trackingBestScore = trackingLastScore
-    localStorage.setItem("trackingBestScore", trackingBestScore)
+    localStorage.setItem("trackingBestScore",trackingBestScore)
   }
 
 
@@ -248,8 +243,12 @@ function vyhra(){
     localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
   }
   
-  localStorage.setItem("trackingvsechnyScore",VsechnyScore)
-  localStorage.setItem("trackingAverageScore",Math.floor(trackingAverageScore))
+ localStorage.setItem("trackingAverageScore",trackingAverageScore)
+ localStorage.setItem("trackingvsechnyScore",VsechnyScore)
+
+
+
+
 
 
 }
