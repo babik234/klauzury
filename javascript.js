@@ -21,6 +21,8 @@ let gridshot3x3BestScore = localStorage.getItem("gridshot3x3BestScore")
 let gridshot3x3AverageScore = localStorage.getItem("gridshot3x3AverageScore")
 
 
+let darkmode = localStorage.getItem("darkmode") 
+
 let mode = document.getElementById("mode")
 let button = 0
 
@@ -125,8 +127,13 @@ document.getElementById("G3AS").innerHTML ="Averagescore: " +  gridshot3x3Averag
 
 mode.innerHTML = "white"
 
+if(darkmode == null || isNaN(darkmode)){
+    darkmode = 0
+}
 
+darkmode = localStorage.getItem("darkmode")
 
+dark()
 
 function dark(){
     if(button == 0){
@@ -140,6 +147,7 @@ document.querySelectorAll('#games').forEach(item => {
 })
 document.getElementById("mode").innerHTML = "black"
 
+localStorage.setItem("darkmode",button)
 } 
   else if(button == 1){
     document.body.style.backgroundColor = "white"; 
@@ -151,6 +159,7 @@ document.getElementById("mode").innerHTML = "black"
         item.style.borderColor = "black";
     })
 document.getElementById("mode").innerHTML = "white"
+localStorage.setItem("darkmode", button)
 }
 }
 
