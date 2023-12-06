@@ -13,16 +13,17 @@ let accAll = 0
 let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
 
-let trackingvsechnyScore = localStorage.getItem("trackingvsechnyScore")
-let trackingpocetHer = localStorage.getItem("trackingpocetHer")
 
 let timeLeft = 3;
 let timerId = 0;
 
+let darkmode = localStorage.getItem("darkmode")
 
 let trackingLastScore = localStorage.getItem("trackingLastScore")
 let trackingBestScore = localStorage.getItem("trackingBestScore")
 let trackingAverageScore = localStorage.getItem("trackingAverageScore")
+let trackingvsechnyScore = localStorage.getItem("trackingvsechnyScore")
+let trackingpocetHer = localStorage.getItem("trackingpocetHer")
 
 console.log(gameVH)
 console.log(vh)
@@ -312,4 +313,9 @@ setInterval(setPointsPositions,0)
      Start.style.display = "none"  
      StartP.style.display = "none"  
      timerId =  setInterval(countdown, 1000)
+    }
+
+
+    if(darkmode == 1){
+      document.getElementById("body").style.backgroundColor = "grey"
     }

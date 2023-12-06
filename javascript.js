@@ -129,16 +129,24 @@ mode.innerHTML = "white"
 
 if(darkmode == null || isNaN(darkmode)){
     darkmode = 0
+    button = 0
 }
-
-darkmode = localStorage.getItem("darkmode")
-
-dark()
+button = darkmode
 
 function dark(){
     if(button == 0){
-document.body.style.backgroundColor = "rgb(52, 52, 52)";
 button++
+localStorage.setItem("darkmode", button)
+} 
+  else if(button == 1){
+button--
+localStorage.setItem("darkmode", button)
+}
+}
+
+function check(){
+if(button == 1){
+document.body.style.backgroundColor = "rgb(52, 52, 52)";
 document.querySelectorAll('#GSLS,#GSBS,#GSAS,#SSLS,#SSBS,#SSAS,#STLS,#STBS,#STAS,#TLS,#TBS,#TAS,#G3AS,#G3BS,#G3LS,#h2,#h1').forEach(item => {
     item.style.color = "#999"
 })
@@ -146,12 +154,8 @@ document.querySelectorAll('#games').forEach(item => {
     item.style.borderColor = "black";
 })
 document.getElementById("mode").innerHTML = "black"
-
-localStorage.setItem("darkmode",button)
-} 
-  else if(button == 1){
+}  else if(button == 0){
     document.body.style.backgroundColor = "white"; 
-    button--
     document.querySelectorAll('#GSLS,#GSBS,#GSAS,#SSLS,#SSBS,#SSAS,#STLS,#STBS,#STAS,#TLS,#TBS,#TAS,#G3AS,#G3BS,#G3LS,#h2,#h1').forEach(item => {
         item.style.color = "black"
     })
@@ -159,12 +163,7 @@ localStorage.setItem("darkmode",button)
         item.style.borderColor = "black";
     })
 document.getElementById("mode").innerHTML = "white"
-localStorage.setItem("darkmode", button)
+
 }
 }
-
-
-
-
-
-
+setInterval(check,0)
