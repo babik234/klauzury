@@ -74,7 +74,7 @@ function outFunction(){
     x_pos1 = random(5,window.innerWidth - 50)
     y_pos1 = random(5,(gameVH - vh/5)-5)
  
-    width = random(25,100)
+    width = random(25,125)
     height = width
 
     obj.style.width = width + "px"

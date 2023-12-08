@@ -18,16 +18,14 @@ let points = 0
 console.log(screen.getBoundingClientRect())
 
 
-x_pos1 = random(5,window.innerWidth - 65)
-y_pos1 = random(5,(window.innerHeight)-(window.innerHeight/3))
+let  x_pos1 = random(5,window.innerWidth - 65)
+let y_pos1 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
-x_pos2 = random(5,window.innerWidth - 65)
-y_pos2 = random(5,(window.innerHeight)-(window.innerHeight/3))
+let x_pos2 = random(5,window.innerWidth - 65)
+let y_pos2 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
-x_pos3 = random(5,window.innerWidth - 65)
-y_pos3 = random(5,(window.innerHeight)-(window.innerHeight/3))
-
-console.log(y_pos1)
+let x_pos3 = random(5,window.innerWidth - 65)
+let y_pos3 = random(5,(window.innerHeight)-(window.innerHeight/3))
 
 screen.style.width = window.innerWidth
 screen.style.height = window.innerHeight
@@ -49,8 +47,8 @@ x2x3 = Math.abs(X2X3)
 
 let X3X1 = x_pos3 - x_pos1
 let X3X2 = x_pos3 - x_pos2
-x3x1 = Math.abs(X3X1)
-x3x2 = Math.abs(X3X2)
+
+
 
 click1()
 click2()
@@ -73,9 +71,12 @@ circle3.addEventListener("click",click3)
 
 
 function click1(){
-        x_pos1 = random(5,window.innerWidth - 65)
+   
+    do{
+        x_pos1 = random(5,window.innerWidth - 100)
         y_pos1 = random(5,(window.innerHeight)-(window.innerHeight/3))
-
+    }while(((x_pos1-x_pos2 >  -100) && (x_pos1-x_pos2 < 100)) || (((x_pos1-x_pos3 > -100) && (x_pos1-x_pos3 < 100))))
+  
             
         circle1.style.position = "absolute";
         circle1.style.left = x_pos1 + "px"
@@ -84,16 +85,14 @@ function click1(){
         points++
         document.getElementById("p").innerHTML = points
 
-    if ((x1x2 < 75) || (x1x3 < 75)){
-
-        console.log("x_pos1")
-    } 
-    console.log(x_pos1)
-}
+        console.log(x_pos1)
+    }
 
 function click2(){
-        x_pos2 = random(5,window.innerWidth - 65)
+    do{
+        x_pos2 = random(5,window.innerWidth - 100)
         y_pos2 = random(5,(window.innerHeight)-(window.innerHeight/3))
+    }while(((x_pos2-x_pos1 >  -100) && (x_pos2-x_pos1 < 100)) || (((x_pos2-x_pos3 > -100) && (x_pos2-x_pos3 < 100))))
 
             
         circle2.style.position = "absolute";
@@ -102,16 +101,14 @@ function click2(){
 
         points++
         document.getElementById("p").innerHTML = points
-
-    if ((x2x1 < 75) || (x2x3 < 75)){
-
-        console.log("x_pos2")
-    } 
-    console.log(x_pos2)
+        console.log(x_pos2)
+       
 }
 function click3(){
-        x_pos3 = random(5,window.innerWidth - 65)
+    do{
+        x_pos3 = random(5,window.innerWidth - 100)
         y_pos3 = random(5,(window.innerHeight)-(window.innerHeight/3))
+    }while(((x_pos3-x_pos1 >  -100) && (x_pos3-x_pos1 < 100)) || (((x_pos3-x_pos2 > -100) && (x_pos3-x_pos2 < 100))))
 
             
         circle3.style.position = "absolute";
@@ -120,7 +117,7 @@ function click3(){
 
         points++
         document.getElementById("p").innerHTML = points
-    console.log(x_pos3)
+        console.log(x_pos3)
 }
 
 

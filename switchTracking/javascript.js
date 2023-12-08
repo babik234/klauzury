@@ -12,16 +12,7 @@ let switchtrackpocetHer = localStorage.getItem("switchtrackpocetHer")
 let switchtrackAverageScore = localStorage.getItem("switchtrackAverageScore")
 let switchtrackLastScore = localStorage.getItem("switchtrackLastScore")
 let switchtrackBestScore = localStorage.getItem("switchtrackBestScore")
-/*
-if( switchtrackAverageScore && switchtrackBestScore && switchtrackLastScore == null){
-  switchtrackAverageScore = 0
-  switchtrackLastScore = 0
-  switchtrackBestScore = 0
-  localStorage.setItem("switchtrackAverageScore",Math.floor(switchtrackAverageScore))
-  localStorage.setItem("switchtrackBestScore",switchtrackBestScore)
-  localStorage.setItem("switchtrackLastScore",switchtrackLastScore)
-}
-*/
+
 
 let hitPoints = 100
 let Minus = 0
@@ -78,7 +69,7 @@ function responsibility(){
   // změny speedu
   
   function samuelX() {
-    speedX = random(3, 3) * random(-1, 1);
+    speedX = random(1, 1) * random(-1, 1);
   }
 
 
@@ -87,8 +78,8 @@ function responsibility(){
     hitPoints = 100
     x_pos = random(10, window.innerWidth - 80);
     y_pos = random(10, window.innerHeight - (window.innerHeight / 3));
-    speedX = random(2, 5);
-    intervalSa = setInterval(samuelX, 1000);
+    speedX = random(1, 4);
+    intervalSa = setInterval(samuelX, 2000);
     intervalR = setInterval(samR, 20);
   
     obj.style.position = "absolute";
