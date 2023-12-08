@@ -9,7 +9,8 @@ body{
     width: 100%;
     background-color: #bbb;
     height: 87vh;
-    border: 2px black solid;
+    border-top:  solid black 2px;
+    border-bottom:  solid black 2px;
     position: absolute;
     z-index: -5;
 }
@@ -49,7 +50,7 @@ font-family: 'Roboto Slab', serif;
 }
 .p{
     position: absolute;
-    margin-top: 91vh;
+    margin-top: 90vh;
     left: 45%;
     font-size: 45px;
 }

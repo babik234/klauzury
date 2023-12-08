@@ -14,10 +14,10 @@ let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
 
 
-let timeLeft = 3;
+let timeLeft = 30;
 let timerId = 0;
 
-let darkmode = localStorage.getItem("darkmode")
+
 
 let trackingLastScore = localStorage.getItem("trackingLastScore")
 let trackingBestScore = localStorage.getItem("trackingBestScore")
@@ -314,7 +314,8 @@ setInterval(setPointsPositions,0)
      StartP.style.display = "none"  
      timerId =  setInterval(countdown, 1000)
     }
-
+    
+    let darkmode = localStorage.getItem("darkmode")
 
     if(darkmode == 1){
       document.getElementById("body").style.backgroundColor = "grey"

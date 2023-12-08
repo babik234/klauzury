@@ -35,6 +35,8 @@ body{
     z-index: -5;
     width: 100%;
     position: absolute;
+    border-top:  solid black 2px;
+    border-bottom:  solid black 2px;
 }
 .points{
     position: absolute;

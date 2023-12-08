@@ -42,15 +42,7 @@ function responsibility(){
     obj.style.height = vh/7 + "px"
     obj.style.width = vh/21 + "px"
     obj.style.display = "block"
-/*
-    obj2.style.height = vh/7 + "px"
-    obj2.style.width = vh/21 + "px"
-    obj2.style.display = "block"
 
-    obj3.style.height = vh/7 + "px"
-    obj3.style.width = vh/21 + "px"
-    obj3.style.display = "block"
-*/
   }
   setInterval(responsibility,0)
   function restart(){
@@ -192,4 +184,10 @@ function start(){
  Start.style.display = "none"  
  StartP.style.display = "none"  
  timerId =  setInterval(countdown, 1000)
+}
+
+let darkmode = localStorage.getItem("darkmode")
+
+if(darkmode == 1){
+  document.getElementById("body").style.backgroundColor = "grey"
 }

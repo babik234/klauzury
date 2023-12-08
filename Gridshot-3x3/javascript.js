@@ -205,3 +205,8 @@ function random(min,max) {
    function restart(){
     location.reload()
    }
+   let darkmode = localStorage.getItem("darkmode")
+
+   if(darkmode == 1){
+     document.getElementById("body").style.backgroundColor = "grey"
+   }

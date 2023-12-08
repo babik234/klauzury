@@ -22,21 +22,6 @@ let spidershotAverageScore = localStorage.getItem("spidershotAverageScore")
 
 points = 0
 
-
-/*
-if(spidershotAverageScore && spidershotBestScore && spidershotLastScore === null){
-  spidershotAverageScore = 0
-  spidershotLastScore = 0
-  spidershotBestScore = 0
-  localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
-  localStorage.setItem("spidershotBestScore",spidershotBestScore)
-  localStorage.setItem("spidershotLastScore",spidershotLastScore)
-}
-
-*/
-
-
-
 function restart(){
     location.reload()
 }
@@ -114,7 +99,7 @@ function outFunction(){
     
     document.getElementById("screen").style.width = (window.innerWidth - 80)
     document.getElementById("screen").style.height = (gameVH - vh/5)-5
-    document.getElementById("pp").style.marginLeft = 150 + "px"
+    document.getElementById("pp").style.marginLeft = 175 + "px"
 
     if(x_pos1 > window.innerWidth - 5){
         x_pos1 = window.innerWidth - (width/2 + 5)
@@ -204,4 +189,9 @@ function start(){
  Start.style.display = "none"  
  StartP.style.display = "none"  
  timerId =  setInterval(countdown, 1000)
+}
+let darkmode = localStorage.getItem("darkmode")
+
+if(darkmode == 1){
+  document.getElementById("body").style.backgroundColor = "grey"
 }

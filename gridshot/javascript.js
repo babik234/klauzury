@@ -177,8 +177,8 @@ function vyhra(){
     }
 
 function responsivity(){
- document.getElementById("p").style.left = (window.innerWidth/2-75) + 175 + "px"
- document.getElementById("pp").style.left = window.innerWidth/2-75 + "px"
+ document.getElementById("p").style.left = (window.innerWidth/2-120) + 175 + "px"
+ document.getElementById("pp").style.left = window.innerWidth/2-120 + "px"
 
  document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+"px"
 document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +150+"px"
@@ -208,4 +208,10 @@ function start(){
  Start.style.display = "none"  
  StartP.style.display = "none"  
  timerId =  setInterval(countdown, 1000)
+}
+
+let darkmode = localStorage.getItem("darkmode")
+
+if(darkmode == 1){
+  document.getElementById("body").style.backgroundColor = "grey"
 }

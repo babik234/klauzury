@@ -10,7 +10,8 @@ body{
     background-color: #bbb;
     width: 100%;
     z-index: -5;
-    border: black 2px solid;
+    border-top:  solid black 2px;
+    border-bottom:  solid black 2px;
     position: absolute;
 }
 .obj{

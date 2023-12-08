@@ -11,8 +11,8 @@ body{
     height: 87vh;
     z-index: -5;
     background-color: #bbb;
-    border-top: solid black 5px;
-    border-bottom: solid black 5px;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
 }
 .circle{
     width: 120px;
