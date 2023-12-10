@@ -143,7 +143,7 @@ function samR() {
   obj.style.left = x_pos + "px";
   obj.style.top = y_pos + "px";  
 }
-
+//responzivita
 function responsibility(){
   gameVH = window.innerHeight/100 * 87
   vh = window.innerHeight
@@ -181,8 +181,8 @@ function AccMinuss(){
   clearInterval(intervalPlusAcc);
 }
 
+//vypocty pro accuracy
 function accuracy(){
-
 accAll = accOn+accOff
 if(accAll === 0){
   document.getElementById("acc").innerHTML = 0
@@ -194,7 +194,7 @@ document.getElementById("acc").innerHTML = Math.floor(acc)
 setInterval(accuracy,10)
 
 
-// vyhra
+// vyhra (po 30 sekundach)
 function vyhra(){
 
   pointsKonec = points
@@ -229,7 +229,8 @@ function vyhra(){
   VsechnyScore += trackingLastScore
   
   trackingAverageScore = VsechnyScore/trackingpocetHer
-  
+
+  //NaN
   if(isNaN(VsechnyScore) == true){
       VsechnyScore = trackingLastScore
       localStorage.setItem("trackingvsechnyScore",VsechnyScore)
@@ -244,7 +245,6 @@ function vyhra(){
 }
 
 // points
-
 function scoreP() {
   points++;
   document.getElementById("p").innerHTML = points;
@@ -298,13 +298,16 @@ setInterval(setPointsPositions,0)
     let Start = document.getElementById("start")
     
     Start.addEventListener("click",start)
-    
+
+    //po kliknuti se hra spusti (zapne se timer)
     function start(){
      Start.style.display = "none"  
      StartP.style.display = "none"  
      timerId =  setInterval(countdown, 1000)
     }
     
+
+    //darkmode
     let darkmode = localStorage.getItem("darkmode")
 
     if(darkmode == 1){

@@ -41,7 +41,7 @@ function responsibility(){
   initializeGame()
 
 
-
+//vykreslování objektu
   function samR() {
     if (x_pos >= window.innerWidth - 80) {
       x_pos = window.innerWidth - 85;
@@ -71,7 +71,7 @@ function responsibility(){
   }
 
 
-
+// zapnutí hry
   function initializeGame() {
     hitPoints = 100
     x_pos = random(10, window.innerWidth - 80);
@@ -87,10 +87,11 @@ function responsibility(){
     obj.style.display = "block"
     document.getElementById("p").innerHTML = points
   }
-  
+  //eventlistenery
   obj.addEventListener("mouseenter",damage)
   obj.addEventListener("mouseleave",notDamage)
 
+//vypočty damage
 function damage(){
 Minus = setInterval(damageMinus,10)
   if(hitPoints <= 0){
@@ -105,7 +106,7 @@ function notDamage(){
   clearInterval(Minus)
 }
 
-// duplicitní kód po 30s
+// vyhra
 function vyhra(){
   document.getElementById("screen").style.display = "block";
 
@@ -169,6 +170,7 @@ let Start = document.getElementById("start")
 
 Start.addEventListener("click",start)
 
+ //po kliknuti se hra spusti (zapne se timer)
 function start(){
  Start.style.display = "none"  
  StartP.style.display = "none"  

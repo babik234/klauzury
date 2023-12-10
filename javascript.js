@@ -1,31 +1,32 @@
+//local storage
 let trackingLastScore = localStorage.getItem("trackingLastScore")
 let trackingBestScore = localStorage.getItem("trackingBestScore")
 let trackingAverageScore = localStorage.getItem("trackingAverageScore")
 
-
+//local storage
 let gridshotLastScore = localStorage.getItem("gridshotLastScore")
 let gridshotBestScore = localStorage.getItem("gridshotBestScore")
 let gridshotAverageScore = localStorage.getItem("gridshotAverageScore")
 
-
+//local storage
 let spidershotLastScore = localStorage.getItem("spidershotLastScore")
 let spidershotBestScore = localStorage.getItem("spidershotBestScore")
 let spidershotAverageScore = localStorage.getItem("spidershotAverageScore")
-
+//local storage
 let switchtrackLastScore = localStorage.getItem("switchtrackLastScore")
 let switchtrackBestScore = localStorage.getItem("switchtrackBestScore")
 let switchtrackAverageScore = localStorage.getItem("switchtrackAverageScore")
-
+//local storage
 let gridshot3x3LastScore = localStorage.getItem("gridshot3x3LastScore")
 let gridshot3x3BestScore = localStorage.getItem("gridshot3x3BestScore")
 let gridshot3x3AverageScore = localStorage.getItem("gridshot3x3AverageScore")
 
-
+//darkmode
 let darkmode = localStorage.getItem("darkmode") 
 
 let mode = document.getElementById("mode")
 let button = 0
-
+//null 
 if(trackingAverageScore == null || trackingBestScore == null || trackingLastScore == null){
     trackingAverageScore = 0
     trackingBestScore = 0
@@ -40,7 +41,7 @@ if(trackingAverageScore == null || trackingBestScore == null || trackingLastScor
       localStorage.setItem("trackingBestScore", trackingBestScore)
 
     }
-     
+  //null    
 if(switchtrackAverageScore == null || switchtrackBestScore == null || switchtrackLastScore == null){
    switchtrackAverageScore = 0
    switchtrackBestScore = 0
@@ -54,7 +55,7 @@ if(switchtrackAverageScore == null || switchtrackBestScore == null || switchtrac
         localStorage.setItem("switchtrackBestScore",switchtrackBestScore)
         localStorage.setItem("switchtrackLastScore",switchtrackLastScore)
     }
-
+//null 
 if(gridshotAverageScore == null || gridshotBestScore == null || gridshotLastScore == null){
     gridshotAverageScore = 0
     gridshotBestScore = 0
@@ -69,7 +70,7 @@ if(gridshotAverageScore == null || gridshotBestScore == null || gridshotLastScor
             localStorage.setItem("gridshotLastScore",gridshotLastScore)
         }
 
-
+//null 
 if(gridshot3x3AverageScore == null || gridshot3x3BestScore == null || gridshot3x3LastScore == null){
      gridshot3x3AverageScore = 0
      gridshot3x3BestScore = 0
@@ -83,7 +84,7 @@ if(gridshot3x3AverageScore == null || gridshot3x3BestScore == null || gridshot3x
         localStorage.setItem("gridshot3x3BestScore",gridshot3x3BestScore)
         localStorage.setItem("gridshot3x3LastScore",gridshot3x3LastScore)
         }
-        
+   //null     
 if(spidershotAverageScore == null || spidershotBestScore == null || spidershotLastScore == null){
      spidershotAverageScore = 0
      spidershotBestScore = 0
@@ -100,7 +101,7 @@ if(spidershotAverageScore == null || spidershotBestScore == null || spidershotLa
 
 
 
-
+//vypise do html
 
 document.getElementById("TLS").innerHTML = "Lastscore: " + trackingLastScore
 document.getElementById("TBS").innerHTML = "bestscore: " +trackingBestScore
@@ -126,13 +127,13 @@ document.getElementById("G3AS").innerHTML ="Averagescore: " +  gridshot3x3Averag
 
 
 mode.innerHTML = "white"
-
+//null
 if(darkmode == null || isNaN(darkmode)){
     darkmode = 0
     button = 0
 }
 button = darkmode
-
+//darkmode
 function dark(){
     if(button == 0){
 button++
@@ -143,7 +144,7 @@ button--
 localStorage.setItem("darkmode", button)
 }
 }
-
+// darkmode (check)
 function check(){
 if(button == 1){
 document.body.style.backgroundColor = "rgb(52, 52, 52)";

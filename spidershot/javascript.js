@@ -22,6 +22,7 @@ let spidershotAverageScore = localStorage.getItem("spidershotAverageScore")
 
 points = 0
 
+//restart
 function restart(){
     location.reload()
 }
@@ -31,19 +32,19 @@ function restart(){
 
 obj.addEventListener("click",middleFunction)
 
-
+//rng generator
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
-          
+  //css     
   obj.style.position = "absolute"
   obj.style.left = x_pos1 + "px"
   obj.style.top = y_pos1 + "px"
 
   
 
-
+//střední kolečko
   function middleFunction(){ 
     width = random(25,100)
     height = width
@@ -64,7 +65,7 @@ function random(min, max) {
   document.getElementById("pp").innerHTML = points
   
 }
-
+//kolečko všude
 function outFunction(){ 
     x_pos1 = random(5,window.innerWidth - 50)
     y_pos1 = random(5,(gameVH - vh/5)-5)
@@ -84,7 +85,7 @@ function outFunction(){
     points++
     document.getElementById("pp").innerHTML = points
  }
-// resposibilita
+// respozivita
  function responsibility(){
     gameVH = window.innerHeight/100 * 87
     vh = window.innerHeight
@@ -116,7 +117,7 @@ function outFunction(){
   }
   setInterval(responsibility,0)
 
-
+//odpočet
   function countdown() {
     if (timeLeft == 0) {
       clearInterval(timerId)
@@ -128,7 +129,7 @@ function outFunction(){
   }
   document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
 
-    
+  //vyhra  
   function vyhra(){
 
     game.style.display = "block";
@@ -177,7 +178,7 @@ function outFunction(){
 let Start = document.getElementById("start")
 
 Start.addEventListener("click",start)
-
+ //po kliknuti se hra spusti (zapne se timer)
 function start(){
  Start.style.display = "none"  
  StartP.style.display = "none"  

@@ -66,7 +66,7 @@ circle1.addEventListener("click",click1)
 circle2.addEventListener("click",click2)
 circle3.addEventListener("click",click3)
 
-
+//kolecko 1 do-while cyklus dela aby se nebyly u sebe
 function click1(){
    
     do{
@@ -82,7 +82,7 @@ function click1(){
         points++
         document.getElementById("p").innerHTML = points
     }
-
+//kolecko 2 do-while cyklus dela aby se nebyly u sebe
 function click2(){
     do{
         x_pos2 = random(5,window.innerWidth - 100)
@@ -99,6 +99,7 @@ function click2(){
         console.log(x_pos2)
        
 }
+//kolecko 3 do-while cyklus dela aby se nebyly u sebe
 function click3(){
     do{
         x_pos3 = random(5,window.innerWidth - 100)
@@ -118,7 +119,7 @@ function click3(){
 
 
 
- 
+//vyhra + local storage 
 function vyhra(){
 
     game.style.display = "block";
@@ -167,7 +168,7 @@ function vyhra(){
     localStorage.setItem("gridshotAverageScore",Math.floor(gridshotAverageScore))
 
     }
-
+//respozivita
 function responsivity(){
  document.getElementById("p").style.left = (window.innerWidth/2-120) + 175 + "px"
  document.getElementById("pp").style.left = window.innerWidth/2-120 + "px"
@@ -177,7 +178,7 @@ document.getElementById("endR").style.marginLeft = (window.innerWidth/2-150) +15
 }
 
 setInterval(responsivity,0)
-
+//odpočet
 function countdown() {
     if (timeLeft == 0) {
     clearInterval(timerId)
@@ -195,7 +196,7 @@ let StartP =  document.getElementById("startP")
 let Start = document.getElementById("start")
 
 Start.addEventListener("click",start)
-
+//po kliknuti se hra spusti (zapne se timer)
 function start(){
  Start.style.display = "none"  
  StartP.style.display = "none"  

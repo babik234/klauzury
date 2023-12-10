@@ -13,12 +13,13 @@ let timerId = 0
 
 const circles = document.querySelector('.wrapper').querySelectorAll("div");
 
-
+//local storage
 let gridshot3x3vsechnyScore = localStorage.getItem("gridshot3x3vsechnyScore")
 let gridshot3x3pocetHer = localStorage.getItem("gridshot3x3pocetHer")
 let gridshot3x3AverageScore = localStorage.getItem("gridshot3x3AverageScore")
 let gridshot3x3LastScore = localStorage.getItem("gridshot3x3LastScore")
 let gridshot3x3BestScore = localStorage.getItem("gridshot3x3BestScore")
+
 // nastaví background vsech koleček na "grey"
 for(let l = 0;l<9;l++){
     circles[l].style.background = "grey"
@@ -26,13 +27,13 @@ for(let l = 0;l<9;l++){
 
  document.getElementById("points").innerHTML = "Points: " + points
 
-
+//hra (spuštění)
 hra()
-
+//rng generator
 function random(min,max) {
     return Math.floor((Math.random())*(max-min+1))+min;
    }
-
+//logika celé hry
    function hra(){
    do{
     x = random(1,9)
@@ -76,7 +77,7 @@ function random(min,max) {
     }
    }
 }
-
+// když kliknete na cerne points++ a zmeni se background
     for(let l = 0;l<9;l++){
         circles[l].addEventListener("click",function () {spawn(l)})
      }
@@ -90,7 +91,7 @@ function random(min,max) {
     }
 
 
-
+// kdyz v gridu neni ani jedno cerne kolecko znovu se provede hra()
     function check(){
         let circlesN = 0
         for(let v = 0;v<9;v++){
@@ -113,7 +114,7 @@ function random(min,max) {
     
     setInterval(check,1)
 
-
+ //odpočet
     function countdown() {
         if (timeLeft == 0) {
           clearInterval(timerId)
@@ -125,7 +126,7 @@ function random(min,max) {
       }
       document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
 
-
+//vyhra + local storage
       function vyhra(){
 
         document.getElementById("endB").style.marginLeft = (window.innerWidth/2-150) +0+"px"
@@ -184,18 +185,19 @@ function random(min,max) {
     let Start = document.getElementById("start")
     
     Start.addEventListener("click",start)
-    
+
+     //po kliknuti se hra spusti (zapne se timer)
     function start(){
      Start.style.display = "none"  
      StartP.style.display = "none"  
      timerId =  setInterval(countdown, 1000)
     }
-
+//restart
    function restart(){
     location.reload()
    }
    let darkmode = localStorage.getItem("darkmode")
-
+//darkmode
    if(darkmode == 1){
      document.getElementById("body").style.backgroundColor = "grey"
    }
