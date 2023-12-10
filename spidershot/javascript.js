@@ -45,15 +45,11 @@ function random(min, max) {
 
 
   function middleFunction(){ 
-
     width = random(25,100)
     height = width
- 
-
+    
    x_pos1 = (window.innerWidth/2) - (width/2)
    y_pos1 = (gameVH/2) - (width/2)
-
-
 
    obj.style.width = width + "px"
    obj.style.height= height + "px"
@@ -70,7 +66,6 @@ function random(min, max) {
 }
 
 function outFunction(){ 
-
     x_pos1 = random(5,window.innerWidth - 50)
     y_pos1 = random(5,(gameVH - vh/5)-5)
  
@@ -89,7 +84,7 @@ function outFunction(){
     points++
     document.getElementById("pp").innerHTML = points
  }
-
+// resposibilita
  function responsibility(){
     gameVH = window.innerHeight/100 * 87
     vh = window.innerHeight

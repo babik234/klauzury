@@ -62,12 +62,9 @@ circle2.style.display = "block"
 circle3.style.display = "block"
 
 
-
 circle1.addEventListener("click",click1)
 circle2.addEventListener("click",click2)
 circle3.addEventListener("click",click3)
-
-
 
 
 function click1(){
@@ -84,8 +81,6 @@ function click1(){
 
         points++
         document.getElementById("p").innerHTML = points
-
-        console.log(x_pos1)
     }
 
 function click2(){

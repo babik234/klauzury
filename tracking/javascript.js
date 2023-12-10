@@ -208,10 +208,6 @@ function vyhra(){
   document.querySelectorAll('#back,#acc, #accc, #acccc,#p,#pp,#time').forEach(item => {
     item.style.display = 'none';
 })
-
-
-
-  
   trackingLastScore = pointsKonec
   localStorage.setItem("trackingLastScore",trackingLastScore)
 
@@ -245,12 +241,6 @@ function vyhra(){
   
  localStorage.setItem("trackingAverageScore",trackingAverageScore)
  localStorage.setItem("trackingvsechnyScore",VsechnyScore)
-
-
-
-
-
-
 }
 
 // points

@@ -19,7 +19,7 @@ let gridshot3x3pocetHer = localStorage.getItem("gridshot3x3pocetHer")
 let gridshot3x3AverageScore = localStorage.getItem("gridshot3x3AverageScore")
 let gridshot3x3LastScore = localStorage.getItem("gridshot3x3LastScore")
 let gridshot3x3BestScore = localStorage.getItem("gridshot3x3BestScore")
-
+// nastaví background vsech koleček na "grey"
 for(let l = 0;l<9;l++){
     circles[l].style.background = "grey"
  }
@@ -32,21 +32,19 @@ hra()
 function random(min,max) {
     return Math.floor((Math.random())*(max-min+1))+min;
    }
+
    function hra(){
    do{
     x = random(1,9)
     y = random(1,9)
     z = random(1,9)
-}while(x == y || x == z || y == x || y == z || z == x || z == y)
-
+    }while(x == y || x == z || y == x || y == z || z == x || z == y)  
    for(let i = 0;i<3;i++){
-
     if(i == 1){
         x = y
     }else if(i == 2){
         x = z
     }
-
      switch(x){
         case 1: pole[0][0] = 1
         document.getElementById("1").style.background = "black"
@@ -57,9 +55,6 @@ function random(min,max) {
         case 3: pole[0][2] = 1
         document.getElementById("3").style.background  = "black"
         break;
-
-
-
         case 4: pole[1][0] = 1
         document.getElementById("4").style.background  = "black"
         break;
@@ -69,8 +64,6 @@ function random(min,max) {
         case 6: pole[1][2] = 1
         document.getElementById("6").style.background = "black"
         break;
-
-
         case 7: pole[2][0] = 1
         document.getElementById("7").style.background  = "black"
         break;
@@ -81,11 +74,7 @@ function random(min,max) {
         document.getElementById("9").style.background  = "black"
         break;
     }
-
    }
-   console.log(pole) 
-   console.log("dkgis")
-
 }
 
     for(let l = 0;l<9;l++){

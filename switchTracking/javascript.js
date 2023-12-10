@@ -1,6 +1,4 @@
 let obj = document.getElementById("obj")
-//let obj2= document.getElementById("obj2")
-//let obj3 = document.getElementById("obj3")
 let gameVH = window.innerHeight/100 * 87
 let vh = window.innerHeight
 let x_pos, y_pos, x_posB, y_posB, speedX, speedY
@@ -20,7 +18,7 @@ let Minus = 0
 let timeLeft = 30;
 let timerId = 0;
 
-
+// responsibilita
 function responsibility(){
   document.getElementById("p").style.marginLeft = (window.innerWidth/2-100) + 145 +"px"
   document.getElementById("pp").style.marginLeft = (window.innerWidth/2-100)+"px"
@@ -107,7 +105,7 @@ function notDamage(){
   clearInterval(Minus)
 }
 
-
+// duplicitní kód po 30s
 function vyhra(){
   document.getElementById("screen").style.display = "block";
 
@@ -154,7 +152,7 @@ localStorage.setItem("switchtrackAverageScore",Math.floor(switchtrackAverageScor
 
 }
 
-
+//timer
 function countdown() {
   if (timeLeft == 0) {
     clearInterval(timerId)
