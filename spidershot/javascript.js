@@ -128,7 +128,7 @@ function outFunction(){
   }
   document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
 
-  
+    
   function vyhra(){
 
     game.style.display = "block";
