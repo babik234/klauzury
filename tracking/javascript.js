@@ -142,7 +142,6 @@ function samR() {
   obj.style.position = "absolute";
   obj.style.left = x_pos + "px";
   obj.style.top = y_pos + "px";  
-  console.log(speedX)
 }
 
 function responsibility(){
@@ -290,7 +289,8 @@ function startGame() {
 
 // intervaly
 setInterval(setPointsPositions,0)
-    
+
+    // timer 30 sekundovy a pak spusti funkci vyhra
     function countdown() {
       if (timeLeft == 0) {
         
