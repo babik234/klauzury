@@ -127,7 +127,10 @@ function outFunction(){
     }
   }
   document.getElementById("time").innerHTML = "Timeleft: " + timeLeft
+
+  
   function vyhra(){
+
     game.style.display = "block";
 
     document.getElementById("vyhra").style.display = "block"
@@ -136,10 +139,6 @@ function outFunction(){
     document.querySelectorAll('#p,#pp,#back,#time').forEach(item => {
       item.style.display = 'none';
   })
-
-
-
-
 
    spidershotLastScore = points
    localStorage.setItem("spidershotLastScore",spidershotLastScore)
@@ -151,8 +150,6 @@ function outFunction(){
    document.getElementById("score").innerHTML = "BEST: " + points
    document.getElementById("best").innerHTML = "SCORE: " + spidershotBestScore
   
-
-
    spidershotpocetHer++
   localStorage.setItem("spidershotpocetHer",spidershotpocetHer)
   
@@ -173,8 +170,9 @@ function outFunction(){
   
   localStorage.setItem("spidershotvsechnyScore",VsechnyScore)
   localStorage.setItem("spidershotAverageScore",Math.floor(spidershotAverageScore))
-
   }
+
+
   let StartP =  document.getElementById("startP")
 let Start = document.getElementById("start")
 
